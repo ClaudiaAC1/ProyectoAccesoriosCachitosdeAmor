@@ -5,11 +5,7 @@
 @section('module', 'USUARIOS')
 
 @section('lista-admin')
-<!-- 
- auth()->user()->rol     (1:admi, 2:empleado)
-  IMPLEMENTAR COLUMNA DE ROL EN EL MODELO DE USER
- -->
-<!-- Heading -->
+
 <div class="sidebar-heading">
     Administrador
 </div>
@@ -57,9 +53,9 @@
                 <tr>
                     <th scope="row">{{$u->id}}</th>
                     <td>{{$u->name}}</td>
-                    <td>{{$u->tel}}</td>
+                    <td>{{$u->telefono}}</td>
                     <td>{{$u->email}}</td>
-                    <td>Admin</td>
+                    <td>{{$u->rol}}</td>
                     <td colspam="2" class="row">
                         <a class="btn btn-warning col-4" href="{{route('admin.users.edit', $u)}}" role="button">Editar</a>
 
@@ -68,13 +64,9 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Eliminar</button>
                         </form>
-
                     </td>
                 </tr>
                 @endforeach
-
-
-
             </tbody>
         </table>
 

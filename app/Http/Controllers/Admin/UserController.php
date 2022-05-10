@@ -42,16 +42,18 @@ class UserController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required',                
+                'name' => 'required', 
+                'telefono' => 'required',               
                 'email' => 'required',
                 'rol' => 'required',
+                'password' => 'required'
             ],
             [
                 'name.required' => 'Se requiere de un nombre para el usuario',
-                
-                'email.required' => 'Se requiere de un correo electronico para el usuario',
-                
-                'rol.required' => 'Se requiere de un rol electronico para el usuario'
+                'telefono.required' => 'Se requiere de un numero de telefono para el usuario',                
+                'email.required' => 'Se requiere de un correo electronico para el usuario',                
+                'rol.required' => 'Se requiere de un rol electronico para el usuario',
+                'password.required' => 'Se requiere contraseña para el usuario'
             ]
         );
 
@@ -66,8 +68,9 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        //$user->rol = $request->input('rol');
-       // $user->rolpassword = $request->input('pass');
+        $user->rol = $request->input('rol');
+        $user->tel = $request->input('telefono');
+        $user->rolpassword = $request->input('password');
         
 
         if ($user->save()) {

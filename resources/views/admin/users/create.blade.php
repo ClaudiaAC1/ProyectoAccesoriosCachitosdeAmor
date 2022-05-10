@@ -49,7 +49,7 @@
 
       <div class="mb-3">
         <label for="InputTel" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="InputTel" name="tel">
+        <input type="text" class="form-control" id="InputTel" name="telefono">
       </div>
 
       <div class="mb-3">
@@ -59,7 +59,7 @@
 
       <div class="mb-3">
         <label for="InputPass" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="InputPass" name="pass">
+        <input type="password" class="form-control" id="InputPass" name="password">
       </div>
 
       <div class="mb-3">
@@ -70,15 +70,12 @@
       <div class="mb-3">
         <label for="InputRol" class="form-label">Rol</label>
         <select class="form-select" aria-label="Default select example" name="rol">
-          <option selected>Selecciona la categoria</option>
-          
-          <option value="1">Administrador</option>
-          <option value="2">Dueño</option>
-          <option value="3">Cajero</option>
+          <option selected>Selecciona la categoria</option>          
+          <option value="Administrador">Administrador</option>
+          <option value="Cajero">Cajero</option>
                    
         </select>
       </div>
-
      
 
       <button type="submit" class="btn btn-primary">Agregar</button>
