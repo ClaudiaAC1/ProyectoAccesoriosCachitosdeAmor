@@ -33,13 +33,15 @@ class ConnectController extends Controller
     public function authenticate(Request $request)
     {
         
-        /* $user = new User();
-        $user -> name = 'Sergio';
-        $user -> email = 'sergio@gmail.com';
-        $user -> password = Hash::make('1234');
+         /* $user = new User();
+        $user -> name = 'Claudia';
+        $user -> email = 'clau@gmail.com';
+        $user -> telefono = '0000000000';
+        $user -> password = Hash::make('5678');
+        $user -> rol = 'Empleado';
         $user -> save();
 
-        return $user; */
+        return $user; */ 
          
 
         //Validamos si el usuario ingreso loss datos correctos
