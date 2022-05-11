@@ -139,11 +139,30 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            @if(auth()->user()->rol == 'Administrador')
+            <div class="sidebar-heading">
+                Administrador
+            </div>
 
-            @section('lista-admin')
-            @show()
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Acciones privilegiadas</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{route('admin.users.create')}}">Crear usuario</a>
+                        <a class="collapse-item" href="{{route('admin.users.index')}}">Ver usuarios</a>
 
+                    </div>
+                </div>
+            </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            @endif
+            
         </ul>
         <!-- End of Sidebar -->
 
@@ -204,7 +223,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->nombre }}</span>
                                 <img class="img-profile rounded-circle" src="{{asset('img/perfil.jpeg')}}">
                             </a>
                             <!-- Dropdown - User Information -->

@@ -4,30 +4,6 @@
 
 @section('module', 'USUARIOS')
 
-@section('lista-admin')
-
-<div class="sidebar-heading">
-    Administrador
-</div>
-
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item ">
-    <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Acciones privilegiadas</span>
-    </a>
-    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Crear usuario</a>
-            <a class="collapse-item" href="#">Ver usuarios</a>
-
-        </div>
-    </div>
-</li>
-
-<!-- Divider -->
-<hr class="sidebar-divider d-none d-md-block">
-@endsection
 
 @section('content')
 <div class="card" style="width: 68rem; height: 30rem;">
@@ -52,7 +28,7 @@
                 @foreach($users as $u)
                 <tr>
                     <th scope="row">{{$u->id}}</th>
-                    <td>{{$u->name}}</td>
+                    <td>{{$u->nombre}}</td>
                     <td>{{$u->telefono}}</td>
                     <td>{{$u->email}}</td>
                     <td>{{$u->rol}}</td>
