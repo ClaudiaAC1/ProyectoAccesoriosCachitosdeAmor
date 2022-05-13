@@ -7,7 +7,7 @@
 
 
 @section('content')
-<div class="card" style="width: 68rem; height: 30rem;">
+<div class="card" style="width: 68rem;">
   <div class="card-header">
     <h5 class="card-title">PRODUCTOS</h5>
   </div>
@@ -35,10 +35,10 @@
           <td>{{$p->cantidad}}</td>
           <td>{{$p->precio}}</td>
           <td>{{$p->descripcion}}</td>
-          <td colspam="2" class="row">
-            <a class="btn btn-warning col-4" href="{{route('admin.products.edit', $p)}}" role="button">Editar</a>
+          <td colspan="2" class="row">
+            <a class="btn btn-warning col-7" href="{{route('admin.products.edit', $p)}}" role="button">Editar</a>
 
-            <form method="post" action="{{route('admin.products.destroy',$p)}}"class="col-6 ">
+            <form method="post" action="{{route('admin.products.destroy',$p)}}"class="col-5 ">
               @csrf
               @method('DELETE')
               <button type="submit" class="btn btn-danger" >Eliminar</button>

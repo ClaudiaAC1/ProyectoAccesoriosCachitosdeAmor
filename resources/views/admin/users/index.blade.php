@@ -32,7 +32,7 @@
                     <td>{{$u->telefono}}</td>
                     <td>{{$u->email}}</td>
                     <td>{{$u->rol}}</td>
-                    <td colspam="2" class="row">
+                    <td colspan="2" class="row">
                         <a class="btn btn-warning col-4" href="{{route('admin.users.edit', $u)}}" role="button">Editar</a>
 
                         <form method="post" action="#" class="col-6 ">

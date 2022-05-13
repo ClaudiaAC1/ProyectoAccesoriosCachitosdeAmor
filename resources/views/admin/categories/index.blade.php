@@ -27,7 +27,7 @@
           <th scope="row">{{$c->id}}</th>
           <td>{{$c->nombre}}</td>
 
-          <td colspam="2" class="row">
+          <td colspan="2" class="row">
             <a class="btn btn-warning col-2" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>
 
             <form method="post" action="{{route('admin.categories.destroy',$c)}}"class="col-6 ">
