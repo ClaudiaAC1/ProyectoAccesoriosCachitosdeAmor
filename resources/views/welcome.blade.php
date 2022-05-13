@@ -42,10 +42,9 @@
         <div class="masthead-content">
             <div class="container px-5 py-1">
                 <h1 class="masthead-heading mb-0">TRABAJAMOS PARA RESALTAR TU BELLEZA</h1>
-                <!-- <h2 class="masthead-subheading mb-0"> PERO SE PERFECCIONA CON LOS ACCESORIOS</h2> -->
                 <img src="{{ asset('img/logo.jpg')}}" alt="" style="border-radius:150px;  width:300px; height:300px;">
                 <br>
-                <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
+                <a class="btn btn-primary btn-xl rounded-pill mt-5 p-4" href="#scroll">Leer más</a>
             </div>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
@@ -58,12 +57,13 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="#" alt="..." /></div>
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{asset('img/collage2.png')}}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">For those about to rock...</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        <h2 class="display-4">¿QUIENES SOMOS?</h2>
+                        <p style="text-align:justify">Somos una tienda de accesorios dedicada a la venta de los mejores productos que
+                         te haran lucir radiante en cualquier temporada siempre caminando de la mano con las nuevas tendencias.</p>
                     </div>
                 </div>
             </div>
@@ -74,12 +74,18 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="#" alt="..." /></div>
+                    <div class=""><img class="img-fluid rounded-circle" src="https://scontent.fmex4-2.fna.fbcdn.net/v/t39.30808-6/279140520_321969416707026_555717113292370703_n.jpg?_nc_cat=104&ccb=1-6&_nc_sid=8bfeb9&_nc_eui2=AeEUMBb-k4F0KM84u0bxldWHRRKrsW7_0chFEquxbv_RyB1Ra8fiMf2czHjTGwwKxEJuaUFUputI32g6_GJY6htv&_nc_ohc=UH-opBAa-kMAX96poRf&_nc_ht=scontent.fmex4-2.fna&oh=00_AT8yiGvFKceaR229QrgWI4K0i3KSFsTiD0GxcOeIzUVxXg&oe=6282C240" alt="..." /></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
-                        <h2 class="display-4">We salute you!</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        <h2 class="display-4">De todo un poco!!</h2>
+                        <p style="text-align:justify">Realizamos trabajos como <br>
+                            🔸Aretes <br>
+                            🔸Pulseras <br>
+                            🔸Collares <br>
+                            🔸Llaveros <br>
+                            🔸Accesorios aesthetic <br>
+                            Todo esto con técnicas que permiten un trabajo limpio y hermoso🤗🌼.</p>
                     </div>
                 </div>
             </div>
@@ -95,6 +101,8 @@
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
                         <h2 class="display-4">Let there be rock!</h2>
+                        <i class="bi bi-instagram"></i>
+
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
                     </div>
                 </div>

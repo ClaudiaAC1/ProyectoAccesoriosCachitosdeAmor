@@ -49,7 +49,7 @@ class ConnectController extends Controller
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], true)) {
             return redirect()->route('admin.products.index');
         }
-        return redirect('/');
+        return redirect()->route('auth.login');
     }
 
     public function getLogout()
