@@ -13,9 +13,10 @@ class ReportVController extends Controller
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
      return view("admin.reporteVentas.index")
-     ->with('camposTabla', $this->camposTabla);   
+     ->with('camposTabla', $this->camposTabla);
+     
     }
 }
