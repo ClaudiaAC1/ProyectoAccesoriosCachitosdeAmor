@@ -33,7 +33,7 @@ class ConnectController extends Controller
     public function authenticate(Request $request)
     {
         
-       /* $user = new User();
+        /*$user = new User();
         $user -> nombre = 'Katia';
         $user -> email = 'kati@gmail.com';
         $user -> telefono = '0000000000';
@@ -42,7 +42,7 @@ class ConnectController extends Controller
         $user -> slug = 'katia';
         $user -> save();
 
-        return $user; **/ 
+        return $user; **/
          
 
         //Validamos si el usuario ingreso loss datos correctos

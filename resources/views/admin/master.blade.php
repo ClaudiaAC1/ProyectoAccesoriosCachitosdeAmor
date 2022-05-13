@@ -128,10 +128,7 @@
                 <div id="collapseReportes" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Generar reporte:</h6>
-                        <a class="collapse-item" href="#">Día</a>
-                        <a class="collapse-item" href="#">Quincenal</a>
-                        <a class="collapse-item" href="#">Mensual</a>
-                        <a class="collapse-item" href="#">Inventario</a>
+                        <a class="collapse-item" href="{{route('admin.reporteVentas.index')}}">Reportes</a> <!-- Revisar -->
                     </div>
                 </div>
             </li>
