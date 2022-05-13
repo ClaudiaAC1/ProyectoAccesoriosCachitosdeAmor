@@ -61,7 +61,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-6 col-sm-6" style="margin-bottom: 2%">
                     <button class="btn btn-success" type="button" data-toggle="modal" data-target="#carritoModal"><i
-                            class="fa-solid fa-cart-plus"></i> Ver carrito</button>
+                            class="fa-solid fa-cart-plus"></i> Ver carritoO</button>
                 </div>
             </div>
         </div>
