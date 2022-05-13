@@ -5,8 +5,8 @@
 @section('module', 'REPORTE DE VENTAS')
 
 @section('content')
-<div class="card" style="width: 68rem;">
-    <div class="card-header">
+<div class="conteiner-fluid">
+    <div class=col-12>
         <h5 class="card-title">Reporte de las ventas</h5>
     </div>
 <div class="container-fluid mb-4">
@@ -77,6 +77,51 @@
                 </tr>
             </thead>
             <tbody>
+            <tr>
+                <th scope="col">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+            </tr>
+            <tr>
+                <th scope="col">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+            </tr>
+            <tr>
+                <th scope="col">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+            </tr>
+            <tr>
+                <th scope="col">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+            </tr>
+            <tr>
+                <th scope="col">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+                <th scope="data">asd</th>
+            </tr>
             <tr>
                 <th scope="col">asd</th>
                 <th scope="data">asd</th>

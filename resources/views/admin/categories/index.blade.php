@@ -5,12 +5,12 @@
 @section('module', 'CATEGORIAS')
 
 @section('content')
-<div class="card" style="width: 68rem; height: 30rem;">
+<div class="conteiner-fluid">
   <div class="card-header">
-    <h5 class="card-title">PRODUCTOS</h5>
+    <h5 class="card-title">CATEGORÍAS</h5>
   </div>
 
-  <div class="card-body">
+  <div class="col-12">
     <table class="table">
       <thead>
         <tr>
