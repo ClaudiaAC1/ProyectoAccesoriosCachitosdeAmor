@@ -6,7 +6,7 @@
 
 
 @section('content')
-<div class="card" style="width: 68rem; height: 30rem;">
+<div class="card" style="width: 68rem;">
     <div class="card-header">
         <h5 class="card-title">USUARIOS</h5>
     </div>
@@ -32,10 +32,12 @@
                     <td>{{$u->telefono}}</td>
                     <td>{{$u->email}}</td>
                     <td>{{$u->rol}}</td>
-                    <td colspan="2" class="row">
-                        <a class="btn btn-warning col-4" href="{{route('admin.users.edit', $u)}}" role="button">Editar</a>
+                    <td>
+                        <a class="btn btn-warning" href="{{route('admin.users.edit', $u)}}" role="button">Editar</a>
+                    </td>
 
-                        <form method="post" action="#" class="col-6 ">
+                    <td>
+                        <form method="post" action="{{route('admin.users.destroy',$u)}}" class="col-6 ">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Eliminar</button>

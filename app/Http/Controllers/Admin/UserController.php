@@ -44,17 +44,17 @@ class UserController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'nombre' => 'required', 
-                'telefono' => 'required',               
+                'nombre' => 'required',
+                'telefono' => 'required',
                 'email' => 'required',
                 'rol' => 'required',
                 'password' => 'required',
-                'pass2' => 'required|same:password' 
+                'pass2' => 'required|same:password'
             ],
             [
                 'nombre.required' => 'Se requiere de un nombre para el usuario',
-                'telefono.required' => 'Se requiere de un numero de telefono para el usuario',                
-                'email.required' => 'Se requiere de un correo electronico para el usuario',                
+                'telefono.required' => 'Se requiere de un numero de telefono para el usuario',
+                'email.required' => 'Se requiere de un correo electronico para el usuario',
                 'rol.required' => 'Se requiere de un rol electronico para el usuario',
                 'password.required' => 'Se requiere contraseña para el usuario',
                 'pass2.required' => 'Se requiere confirmar contraseña',
@@ -70,12 +70,12 @@ class UserController extends Controller
 
         $user = new User();
         $user->nombre = $request->input('nombre');
-        $user->slug= Str::slug($request->input('nombre'));
+        $user->slug = Str::slug($request->input('nombre'));
         $user->email = $request->input('email');
         $user->rol = $request->input('rol');
         $user->telefono = $request->input('telefono');
         $user->password =  Hash::make($request->input('password'));
-        
+
 
         if ($user->save()) {
             return redirect()->route('admin.users.index')
@@ -101,9 +101,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('admin.users.edit', compact('user'));
+    
     }
 
     /**
@@ -113,9 +114,49 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        //se hace el guardado en la bd 
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'nombre' => 'required',
+                'telefono' => 'required',
+                'email' => 'required',
+                'rol' => 'required',
+                'password' => 'required',
+                'pass2' => 'required|same:password'
+            ],
+            [
+                'nombre.required' => 'Se requiere de un nombre para el usuario',
+                'telefono.required' => 'Se requiere de un numero de telefono para el usuario',
+                'email.required' => 'Se requiere de un correo electronico para el usuario',
+                'rol.required' => 'Se requiere de un rol electronico para el usuario',
+                'password.required' => 'Se requiere contraseña para el usuario',
+                'pass2.required' => 'Se requiere confirmar contraseña',
+                'pass2.same' => 'No coindicen las contraseñas'
+            ]
+        );
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)
+                ->with('message', 'Se ha producido un error!')
+                ->with('typealert', 'danger')->withInput();
+        }
+
+        $user->nombre = $request->input('nombre');
+        $user->slug = Str::slug($request->input('nombre'));
+        $user->email = $request->input('email');
+        $user->rol = $request->input('rol');
+        $user->telefono = $request->input('telefono');
+        $user->password =  Hash::make($request->input('password'));
+
+
+        if ($user->save()) {
+            return redirect()->route('admin.users.index')
+                ->with('message', '¡¡Se ha actualizado exitosamente el usuario!!')
+                ->with('typealert', 'success');
+        }
     }
 
     /**
@@ -124,8 +165,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+         $user->delete();
+        return redirect()->route('admin.users.index')
+                ->with('message', '¡¡Se ha eliminado exitosamente el usuario!!')
+                ->with('typealert', 'success');
     }
 }

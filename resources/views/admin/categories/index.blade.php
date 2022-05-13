@@ -5,7 +5,7 @@
 @section('module', 'CATEGORIAS')
 
 @section('content')
-<div class="card" style="width: 68rem; height: 30rem;">
+<div class="card" style="width: 68rem; ">
   <div class="card-header">
     <h5 class="card-title">PRODUCTOS</h5>
   </div>
@@ -30,10 +30,10 @@
           <td colspan="2" class="row">
             <a class="btn btn-warning col-2" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>
 
-            <form method="post" action="{{route('admin.categories.destroy',$c)}}"class="col-6 ">
+            <form method="post" action="{{route('admin.categories.destroy',$c)}}" class="col-6 ">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-danger" >Eliminar</button>
+              <button type="submit" class="btn btn-danger">Eliminar</button>
             </form>
 
           </td>
@@ -42,9 +42,11 @@
 
       </tbody>
     </table>
-  {{$categories->links()}}
   </div>
+  <div class="card-footer">
 
+    {{$categories->links()}}
+  </div>
 
 </div>
 

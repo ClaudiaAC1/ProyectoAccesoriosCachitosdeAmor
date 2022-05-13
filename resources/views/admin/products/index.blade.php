@@ -35,24 +35,28 @@
           <td>{{$p->cantidad}}</td>
           <td>{{$p->precio}}</td>
           <td>{{$p->descripcion}}</td>
-          <td colspan="2" class="row">
-            <a class="btn btn-warning col-7" href="{{route('admin.products.edit', $p)}}" role="button">Editar</a>
+          <td>
+            <a class="btn btn-warning " href="{{route('admin.products.edit', $p)}}" role="button">Editar</a>
 
-            <form method="post" action="{{route('admin.products.destroy',$p)}}"class="col-5 ">
+          </td>
+          <td>
+            <form method="post" action="{{route('admin.products.destroy',$p)}}">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-danger" >Eliminar</button>
+              <button type="submit" class="btn btn-danger">Eliminar</button>
             </form>
-
           </td>
         </tr>
         @endforeach
 
       </tbody>
     </table>
-    {{$products->links()}}
   </div>
 
+  <div class="card-footer">
+
+    {{$products->links()}}
+  </div>
 
 </div>
 
