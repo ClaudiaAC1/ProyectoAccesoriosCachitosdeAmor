@@ -7,7 +7,7 @@
 
 
 @section('content')
-<div class="card" style="width: 68rem; height: 30rem;">
+<div class="card" style="width: 68rem;">
   <div class="card-header">
     <h5 class="card-title">PRODUCTOS</h5>
   </div>
@@ -50,7 +50,7 @@
 
       </tbody>
     </table>
-
+    {{$products->links()}}
   </div>
 
 
