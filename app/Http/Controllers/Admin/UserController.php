@@ -68,7 +68,6 @@ class UserController extends Controller
                 ->with('typealert', 'danger')->withInput();
         }
 
-       
         $user = new User();
         $user->nombre = $request->input('nombre');
         $user->slug= Str::slug($request->input('nombre'));
