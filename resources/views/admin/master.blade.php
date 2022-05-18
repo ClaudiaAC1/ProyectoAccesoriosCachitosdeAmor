@@ -69,9 +69,8 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu  VENTAS-->
-            <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVentas"
-                    aria-expanded="true" aria-controls="collapseTwo">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVentas" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-cart-plus"></i>
                     <span>Venta</span>
                 </a>
