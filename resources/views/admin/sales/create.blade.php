@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
+
+
 <script>
     $(document).ready(function() {
         var table = $('#products').DataTable({
@@ -47,6 +49,94 @@
 
         });
     });
+
+
+</script>
+<script>
+    let carrito = [];
+    let idsCarrito = [];
+    let cantidadesc=[];
+    let preciosc=[]
+    
+   
+    function agregarCart(producto){
+        $(".tablerow").detach();
+        
+
+        let index = idsCarrito.indexOf(producto["id"]);
+
+        if(index < 0 ){
+           
+            console.log(producto);
+            carrito.push(producto);
+            idsCarrito.push(producto["id"]);
+            cantidadesc.push(1);
+            preciosc.push(producto.precio);
+            
+        }else{
+            cantidadesc[index] = cantidadesc[index] + 1;
+            preciosc[index] = preciosc[index] * cantidadesc[index];
+            
+        }
+       
+        carrito.forEach(function(producto, indice, array) {
+        var valores = "<tr class='tablerow'>"+
+            "<td class='iden'>"+ producto["id"]+"</td>"+
+            "<td>"+ producto["nombre"]+" </td>"+
+            "<td>"+producto.precio+"</td>"+
+            "<td class='inp'> <input id ='cinput' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
+            "<td>"+preciosc[indice]+"</td>"+
+            "<td>acción</td>"+
+            "</tr>";
+        $('#checkOut').find('tbody').append(valores);
+        })
+    
+    
+    
+    
+    }
+
+    function inputChange(id) {
+        console.log('identrada',id)
+        let cantidad= 0;
+        $('#checkOut tbody tr').each(function () {
+        
+        var idc= $(this).children(".iden").html();
+        console.log(idc)
+        
+        if(idc == id){
+            
+          cantidad = $(this).children(".inp").find("input").val();
+          console.log(cantidad)
+        }
+        
+        })
+      
+        console.log("cantidad:",cantidad);
+        let index = idsCarrito.indexOf(id);
+        let producto = carrito[index];
+        cantidadesc[index] = cantidad;
+        preciosc[index] = producto.precio * cantidad;
+        console.log('cantidadefin',cantidadesc[index])
+        
+        let cantidadc = document.getElementById('cinput').value;
+
+        $(".tablerow").detach();
+
+        carrito.forEach(function(producto, indice, array) {
+        var valores = "<tr class='tablerow'>"+
+            "<td class='iden'>"+ producto["id"]+"</td>"+
+            "<td>"+ producto["nombre"]+" </td>"+
+            "<td>"+producto.precio+"</td>"+
+            "<td class='inp'> <input id ='cinput' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
+            "<td>"+preciosc[indice]+"</td>"+
+            "<td>acción</td>"+
+            "</tr>";
+        $('#checkOut').find('tbody').append(valores);
+        })
+    }
+        
+    
 </script>
 
 
@@ -71,12 +161,11 @@
                     <table class="table table-striped" id="products">
                         <thead>
                             <tr>
-                                <th>Clave</th>
+                                <th>Código</th>
                                 <th>Nombre</th>
-                                <th>Categoria</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
                                 <th>Descripcion</th>
+                                <th>Stock</th>
+                                <th>Precio</th>
                                 <th>Agregar al carrito</th>
 
                             </tr>
@@ -86,13 +175,15 @@
                             <tr>
                                 <td>{{$p->id}}</td>
                                 <td>{{$p->nombre}}</td>
-                                <td>{{$p->category->nombre}}</td>
+                                <td>{{$p->descripcion}}</td>
                                 <td>{{$p->cantidad}}</td>
                                 <td>{{$p->precio}}</td>
-                                <td>{{$p->descripcion}}</td>
                                 <td align="center">
-                                    <button class="btn btn-lg" onclick=""><i class="fa-solid fa-cart-plus"></i>
+
+                                    <button class="btn btn-lg" type="submit" onclick="agregarCart({{ $p }} )"><i
+                                            class="fa-solid fa-cart-plus"></i>
                                     </button>
+
                                 </td>
                             </tr>
                             @endforeach
@@ -105,9 +196,9 @@
 
     </div>
 
-    <div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog " role="document">
+    <div class="modal fade bd-example-modal-lg" id="carritoModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
@@ -116,7 +207,24 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="table-responsive">
+                        <table class="table" id="checkOut" name="checkOut">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Quitar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -124,6 +232,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     @endsection

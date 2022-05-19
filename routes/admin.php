@@ -23,3 +23,4 @@ Route::resource('categories', CategoryController::class)->names('admin.categorie
 Route::resource('users', UserController::class)->names('admin.users');
 Route::resource('reporteVentas', ReportVController::class)->names('admin.reporteVentas');
 Route::resource('sales', SaleController::class)->names('admin.sales');
+Route::get('addCart/{id}', [SaleController::class, 'add'])->name('addCart');
