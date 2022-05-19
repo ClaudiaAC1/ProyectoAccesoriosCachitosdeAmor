@@ -324,7 +324,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Accesorios Cachitos de Amor 2022</span>
+                        <span>Copyright &copy; que es esto Accesorios Cachitos de Amor 2022</span>
                     </div>
                 </div>
             </footer>
