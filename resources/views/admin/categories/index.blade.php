@@ -5,7 +5,7 @@
 @section('module', 'CATEGORIAS')
 
 @section('content')
-<div class="conteiner-fluid">
+<div class="card">
   <div class="card-header">
     <h5 class="card-title">CATEGORÍAS</h5>
   </div>

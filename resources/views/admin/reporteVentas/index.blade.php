@@ -5,7 +5,7 @@
 @section('module', 'REPORTE DE VENTAS')
 
 @section('content')
-<div class="conteiner-fluid">
+<div class="card">
     <div class=col-12>
         <h5 class="card-title">Reporte de las ventas</h5>
     </div>
