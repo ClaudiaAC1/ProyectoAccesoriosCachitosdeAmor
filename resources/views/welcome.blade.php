@@ -78,7 +78,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
-                        <h2 class="display-4">De todo un poco!!</h2>
+                        <h2 class="display-4">¡¡De todo un poco!!</h2>
                         <p style="text-align:justify">Realizamos trabajos como <br>
                             🔸Aretes <br>
                             🔸Pulseras <br>
@@ -96,14 +96,16 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-4"><img class="img-fluid rounded-circle" src="https://scontent.fmex4-2.fna.fbcdn.net/v/t39.30808-6/275024830_288692160034752_1414897320314492380_n.jpg?_nc_cat=103&ccb=1-6&_nc_sid=8bfeb9&_nc_eui2=AeGk_ivbkpsw35f_duKBYMwGnw8oPudlnOifDyg-52Wc6Lyfx9sGOkHo9GA-mtalTc_lvQhWB28ru6iW5mshHv-i&_nc_ohc=CQ3GtxWpkssAX8aS1C7&_nc_ht=scontent.fmex4-2.fna&oh=00_AT83OcgetNCIBHR1Hu7MTeJDB4a6NRZK1ymPf7t3JWzoTw&oe=6282E56E" alt="..." /></div>
+                    <div class="p-4"><img class="img-fluid rounded-circle" src="https://blog.wasi.co/wp-content/uploads/2019/12/redes-sociales-de-la-agencia-inmobiliaria.jpg" alt="..." /></div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">Let there be rock!</h2>
+                        <h2 class="display-4">¡Conocenos!</h2>
                         <i class="bi bi-instagram"></i>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        <p style="text-align:justify">Visita nuestras redes sociales, en las cuales puedes encontrar distintas 
+                        dinamicas para ganarte fabulosos premios y descuentos.</p>
+                        <p style="text-align:center"><b> !Comparte y gana!.</b></p>
+                        <p style="text-align:justify"> *Promoción válida este verano 2022</p>
                     </div>
                 </div>
             </div>
