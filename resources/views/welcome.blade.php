@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">¿QUIENES SOMOS?</h2>
+                        <h2 class="display-4">¿Quienes somos?</h2>
                         <p style="text-align:justify">Somos una tienda de accesorios dedicada a la venta de los mejores productos que
                          te haran lucir radiante en cualquier temporada siempre caminando de la mano con las nuevas tendencias.</p>
                     </div>
@@ -100,7 +100,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">¡Conocenos!</h2>
+                        <h2 class="display-4">¡Conócenos!</h2>
                         <i class="bi bi-instagram"></i>
                         <p style="text-align:justify">Visita nuestras redes sociales, en las cuales puedes encontrar distintas 
                         dinamicas para ganarte fabulosos premios y descuentos.</p>
