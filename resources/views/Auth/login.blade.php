@@ -11,7 +11,7 @@
                 <div class="card" style="border-radius: 1rem;">
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
-                            <img src="https://scontent.foax2-1.fna.fbcdn.net/v/t39.30808-6/273618183_276195697951065_1126970526141217672_n.jpg?_nc_cat=101&ccb=1-6&_nc_sid=8bfeb9&_nc_eui2=AeG4u-5vHHniFfaS3zXVWm9c6kwcblQVU0jqTBxuVBVTSF4gox15E0Id2ZwjJDIB-cXH9KbpuuPY2KCoyOzoAz9E&_nc_ohc=NnzGpabpBFAAX84cwh8&_nc_ht=scontent.foax2-1.fna&oh=00_AT-swKUFS6G2sPDo0cEfKPO7dIyA4WXEGcc9gW8EfcnstA&oe=6281079B" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                            <img src="{{asset('img/pulseras c.jpg')}}"  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
