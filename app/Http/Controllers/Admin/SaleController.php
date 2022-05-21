@@ -5,6 +5,9 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Sale;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
+
 
 class SaleController extends Controller
 {
@@ -16,6 +19,24 @@ class SaleController extends Controller
     public function index()
     {
         //
+    }
+
+    public function add($id)
+    {
+
+        $producto = Product::find($id);
+        // dd($producto->id);
+        $alidatedData = $producto->validate([
+            'id' => ['required'],
+            'precio' => ['required'],
+            'cantidad' => ['required'],
+            'nombre' => ['required'],
+        ]);
+
+        Cart::add(
+            $producto
+        );
+        //return back()->with('success', "$producto->nombre ¡se ha agregado con éxito al carrito!");
     }
 
     /**
@@ -37,8 +58,11 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sale = new Sale($request->input());
+        $sale->saveOrFail();
+        return redirect()->route("usuarios.index")->with("mensaje", "Usuario guardado");
     }
+
 
     /**
      * Display the specified resource.
@@ -59,7 +83,6 @@ class SaleController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
