@@ -31,7 +31,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="InputCat" class="form-label">Categoria</label>
+        <label for="InputCat" class="form-label">Categoria</label><a style="color:#FF0000";>*</a>
         <select class="form-select" aria-label="Default select example" name="categoria">
           <option selected>Selecciona la categoria</option>
           @foreach($categories as $c)
@@ -41,12 +41,12 @@
       </div>
 
       <div class="mb-3">
-        <label for="Inputdes" class="form-label">Descripción</label>
+        <label for="Inputdes" class="form-label">Descripción</label><a style="color:#FF0000";>*</a>
         <input type="text" class="form-control" id="Inputdes" name="descripcion">
       </div>
 
       <div class="mb-3">
-        <label for="Inputimg" class="form-label">Imagen</label>
+        <label for="Inputimg" class="form-label">Imagen</label><a style="color:#FF0000";>*</a>
         <input type="file" class="form-control" id="Inputimg" name="url_img">
       </div>
 

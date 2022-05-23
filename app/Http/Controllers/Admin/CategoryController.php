@@ -44,10 +44,11 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'nombre' => 'required'
+                'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/'
             ],
             [
-                'nombre.required' => 'Se requiere de un nombre de la categoria'
+                'nombre.required' => 'Se requiere de un nombre de la categoria',
+                'nombre.regex' => 'Formato del nombre incorrecto'
             ]
         );
 
@@ -58,6 +59,7 @@ class CategoryController extends Controller
         }
 
         $category = new Category();
+        $category->id = date('H').date('i');
         $category->nombre = $request->input('nombre');
         $category->slug = Str::slug($request->input('nombre'));
 

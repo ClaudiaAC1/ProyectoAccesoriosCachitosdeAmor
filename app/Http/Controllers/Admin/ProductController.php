@@ -46,19 +46,22 @@ class ProductController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'nombre' => 'required',
+                'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
                 'url_img' => 'required|image',
-                'precio' => 'required',
-                'categoria' => 'required',
+                'precio' => 'required|regex:/^[0-9]{1,4}.[0.9]{2}$/',
+                'categoria' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
                 'cantidad' => 'required',
                 'descripcion' => 'required',
             ],
             [
                 'nombre.required' => 'Se requiere de un nombre para el producto',
+                'nombre.regex' => 'El formato del nombre para el producto no es el correcto',
                 'url_img.required' => 'Se requiere de una imagen para el producto',
                 'url_img.image' => 'El archivo no es una imagen',
                 'categoria.required' => 'Se requiere seleccion de una categoria',
+                'categoria.regex' => 'El formato del nombre para la categoría no es el correcto',
                 'precio.required' => 'Se requiere precio del producto',
+                'precio.regex' => 'El precio debe tener dos cecimales',
                 'descripcion.required' => 'Se requiere una descripcion del producto',
                 'cantidad.required' => 'Se requiere la cantidad existente del producto'
             ]
