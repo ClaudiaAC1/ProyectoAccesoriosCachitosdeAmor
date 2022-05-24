@@ -29,7 +29,8 @@
 
           <td colspan="2" class="row">
             <a class="btn btn-warning col-2" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>
-
+</td>
+<td>
             <form method="post" action="{{route('admin.categories.destroy',$c)}}" class="col-6 ">
               @csrf
               @method('DELETE')

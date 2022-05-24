@@ -15,7 +15,10 @@
       @csrf
       <div class="mb-3">
         <label for="InputName" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="InputName" name="nombre">
+        <input type="text" class="form-control" id="InputName" name="nombre" onKeypress="return sololetras(event)" required>
+        <div class="valid-feedback">
+      Looks good!
+    </div>
       </div>
 
       <div class="mb-3">
@@ -42,7 +45,7 @@
 
       <div class="mb-3">
         <label for="Inputdes" class="form-label">Descripción</label>
-        <input type="text" class="form-control" id="Inputdes" name="descripcion">
+        <input type="text" class="form-control" id="Inputdes" name="descripcion" onKeypress="return sololetras(event)">
       </div>
 
       <div class="mb-3">
@@ -57,5 +60,23 @@
 
 
 </div>
+<script>
+      function sololetras(e){
+    key=e.KeyCode || e.which;
+    teclado=String.fromCharCode(key).toLowerCase();
 
+    letras = "abcdefghijklmñnopqrstuvwxyz";
+    especiales = "8-37-38-46-164"
+    teclado_especial=false;
+    for(var i in especiales){
+        if(key==especiales[i]){
+            teclado_especial=true;break;
+        }
+    }
+    if(letras.indexOf(teclado)==-1 && !teclado_especial){
+         return false;
+    }
+       
+}
+</script>
 @endsection

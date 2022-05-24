@@ -131,7 +131,7 @@ class ProductController extends Controller
                 'cantidad' => 'required',
                 'descripcion' => 'required',
             ],
-            [
+            [   
                 'nombre.required' => 'Se requiere de un nombre para el producto',
                 'url_img.required' => 'Se requiere de una imagen para el producto',
                 'url_img.image' => 'El archivo no es una imagen',
