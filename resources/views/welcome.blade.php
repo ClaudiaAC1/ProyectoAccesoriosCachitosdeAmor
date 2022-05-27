@@ -113,11 +113,9 @@
     <!-- Footer-->
     <footer class="py-5 bg-black">
         <div class="container px-5">
-            <p class="m-0 text-center text-white small">Copyright &copy; Accesorios Cachito de Amor 2022. Contacto: cachitosdeamor@pedidos.com</p>
-            
+            <p class="m-0 text-center text-white small">Copyright &copy; Accesorios Cachitos de Amor 2022. Contacto: cachitosdeamor@pedidos.com</p>
             <p class="m-0 text-center text-white small"><IMG SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png"  width="25" height="25" >
             Facebook: Cachitos de amor&nbsp&nbsp&nbsp&nbsp
-             ***pendiente redireccionar a las pag oficiales
             <IMG SRC="https://www.mexmads.com/wp-content/uploads/2016/08/Instagram-logo.png"  width="25" height="25" >
             Instagram: @CachitosdeAmor </p>
            
