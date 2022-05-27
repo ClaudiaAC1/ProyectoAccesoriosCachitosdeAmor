@@ -48,10 +48,10 @@ class ProductController extends Controller
             [
                 'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
                 'url_img' => 'required|image',
-                'precio' => 'required|regex:/^[0-9]{1,4}.[0.9]{2}$/',
+                'precio' => 'required|regex:/^[1-9]+\\d*]{1,4}.[0.9]{2}$/',
                 'categoria' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
-                'cantidad' => 'required',
-                'descripcion' => 'required',
+                'cantidad' => 'required|regex:/^[[1-9]+\\d*]{1,4}$/',
+                'descripcion' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
             ],
             [
                 'nombre.required' => 'Se requiere de un nombre para el producto',
@@ -59,10 +59,12 @@ class ProductController extends Controller
                 'url_img.required' => 'Se requiere de una imagen para el producto',
                 'url_img.image' => 'El archivo no es una imagen',
                 'categoria.required' => 'Se requiere seleccion de una categoria',
-                'categoria.regex' => 'El formato del nombre para la categoría no es el correcto',
-                'precio.required' => 'Se requiere precio del producto',
-                'precio.regex' => 'El precio debe tener dos cecimales',
-                'descripcion.required' => 'Se requiere una descripcion del producto',
+                'categoria.regex' => 'El formato del nombre para la categoría no es el correcto.',
+                'cantidad.regex' => 'Solo cantidades permitida de 0 a 9999.',
+                'precio.required' => 'Se requiere precio del producto.',
+                'precio.regex' => 'El precio debe tener dos cecimales y ser positivo.',
+                'descripcion.required' => 'Se requiere una descripcion del producto.',
+                'descripcion.regex' => 'Solo se aceptan caracteres del alfabeto.',
                 'cantidad.required' => 'Se requiere la cantidad existente del producto'
             ]
         );

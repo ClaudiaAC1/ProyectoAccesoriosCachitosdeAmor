@@ -14,7 +14,7 @@
         <form method="post" action="{{route('admin.products.update',$product)}}" accept-charset="UTF-8" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-
+                                       <!--Para introducir el nombre del producto en el negocio.-->
             <div class="mb-3">
                 <label for="InputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="InputName" name="nombre" value="{{$product->nombre}}">

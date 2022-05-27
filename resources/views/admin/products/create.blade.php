@@ -29,7 +29,7 @@
         <label for="InputPre" class="form-label">Precio</label><a style="color:#FF0000";>*</a>
         <input type="text" class="form-control" id="InputPre" name="precio">
       </div>
-
+          <!--Para introducir la categoria -->
       <div class="mb-3">
         <label for="InputCat" class="form-label">Categoria</label><a style="color:#FF0000";>*</a>
         <select class="form-select" aria-label="Default select example" name="categoria">
@@ -44,12 +44,12 @@
         <label for="Inputdes" class="form-label">Descripción</label><a style="color:#FF0000";>*</a>
         <input type="text" class="form-control" id="Inputdes" name="descripcion">
       </div>
-
+          <!--Para introducir una imagen de archivos -->
       <div class="mb-3">
         <label for="Inputimg" class="form-label">Imagen</label><a style="color:#FF0000";>*</a>
         <input type="file" class="form-control" id="Inputimg" name="url_img">
       </div>
-
+          <!--Para guardar información de producto -->
       <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
 
