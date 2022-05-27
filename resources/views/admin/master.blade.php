@@ -21,7 +21,6 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
-
     <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
@@ -324,7 +323,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; que es esto Accesorios Cachitos de Amor 2022</span>
+                        <span>Copyright &copy; Accesorios Cachitos de Amor 2022</span>
                     </div>
                 </div>
             </footer>

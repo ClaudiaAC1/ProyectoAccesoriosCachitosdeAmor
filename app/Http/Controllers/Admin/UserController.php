@@ -48,7 +48,7 @@ class UserController extends Controller
                 'telefono' => 'required',
                 'email' => 'required',
                 'rol' => 'required',
-                'password' => 'required',
+                'password' => 'required|regex:/^[a-zÀ-ÿ\s]{8,15}/',
                 'pass2' => 'required|same:password'
             ],
             [
@@ -57,6 +57,7 @@ class UserController extends Controller
                 'email.required' => 'Se requiere de un correo electronico para el usuario',
                 'rol.required' => 'Se requiere de un rol electronico para el usuario',
                 'password.required' => 'Se requiere contraseña para el usuario',
+                'password.regex' => 'La contraseña debe contener al menos 8 carácteres',
                 'pass2.required' => 'Se requiere confirmar contraseña',
                 'pass2.same' => 'No coindicen las contraseñas'
             ]
