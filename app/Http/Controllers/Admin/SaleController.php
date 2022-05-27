@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Sale;
-use Darryldecode\Cart\Facades\CartFacade as Cart;
+use Carbon\Carbon;
 
 
 class SaleController extends Controller
@@ -19,24 +19,6 @@ class SaleController extends Controller
     public function index()
     {
         //
-    }
-
-    public function add($id)
-    {
-
-        $producto = Product::find($id);
-        // dd($producto->id);
-        $alidatedData = $producto->validate([
-            'id' => ['required'],
-            'precio' => ['required'],
-            'cantidad' => ['required'],
-            'nombre' => ['required'],
-        ]);
-
-        Cart::add(
-            $producto
-        );
-        //return back()->with('success', "$producto->nombre ¡se ha agregado con éxito al carrito!");
     }
 
     /**
@@ -58,9 +40,36 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        $sale = new Sale($request->input());
+
+        $id_user = auth()->user()->id;
+        $fecha = Carbon::now()->toDateString();
+
+        $sale = new Sale(
+            [
+                'usuario' => $id_user,
+                'fecha' => $fecha,
+                'total' => $request->get("total"),
+            ]
+        );
         $sale->saveOrFail();
-        return redirect()->route("usuarios.index")->with("mensaje", "Usuario guardado");
+
+
+        $ids = $request->get("productos");
+        $cantidades = $request->get("cantidades");
+
+        $length = count($ids);
+        for ($i = 0; $i < $length; ++$i) {
+
+            for ($j = 0; $j < (int)$cantidades[$i]; ++$j) {
+                $sale->products()->attach($ids[$i]);
+            }
+        }
+
+        return redirect()->route('admin.sales.create')->with('message', '¡¡Venta exitosa!!');
+    }
+
+    public function agregarProductos()
+    {
     }
 
 

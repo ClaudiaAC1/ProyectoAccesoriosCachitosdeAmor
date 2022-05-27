@@ -6,21 +6,21 @@
 
 @section('content')
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https:cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
 
 
 
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js" crossorigin="anonymous">
+<script src="https:code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https:cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
+<script src="https:cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
+<script src="https:cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js" crossorigin="anonymous">
 </script>
-<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js" crossorigin="anonymous">
+<script src="https:cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js" crossorigin="anonymous">
 </script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
+<link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https:cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
+<link rel="stylesheet" href="https:cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
 
 
 <script>
@@ -57,6 +57,7 @@
     let idsCarrito = [];
     let cantidadesc=[];
     let preciosc=[]
+    let total =0;
     
    
     function agregarCart(producto){
@@ -85,13 +86,14 @@
             "<td>"+ producto["nombre"]+" </td>"+
             "<td>"+producto.precio+"</td>"+
             "<td class='inp'> <input id ='cinput' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
-            "<td>"+preciosc[indice]+"</td>"+
-            "<td>acción</td>"+
+            "<td class='total'>"+preciosc[indice]+"</td>"+
+            "<td><button class='btn btn-lg' onclick=''> <i class='fa-solid fa-minus-circle'></i> </button></td>"+
             "</tr>";
         $('#checkOut').find('tbody').append(valores);
         })
-    
-    
+
+        getTotal()
+        document.getElementById("total").value = total;
     
     
     }
@@ -129,12 +131,50 @@
             "<td>"+ producto["nombre"]+" </td>"+
             "<td>"+producto.precio+"</td>"+
             "<td class='inp'> <input id ='cinput' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
-            "<td>"+preciosc[indice]+"</td>"+
-            "<td>acción</td>"+
+            "<td class='total'>"+preciosc[indice]+"</td>"+
+            "<td><button class='btn btn-lg' onclick=''> <i class='fa-solid fa-minus-circle'></i> </button></td>"+
             "</tr>";
         $('#checkOut').find('tbody').append(valores);
         })
+
+        getTotal()
+        document.getElementById("total").value = total;
     }
+
+    function getTotal(){
+        let totalFinal = 0;
+        $('#checkOut tbody tr').each(function () {
+            var tot= parseInt($(this).children(".total").html())
+            totalFinal = totalFinal + tot;
+        })
+        total = totalFinal;
+    }
+
+    function comprar(){
+        
+        console.log(carrito);
+        console.log(cantidadesc);
+        console.log(preciosc);
+        console.log(idsCarrito);
+
+        const data = new Object();
+
+         data.total =  total;
+         data.productos = idsCarrito;
+         data.cantidades= cantidadesc;
+
+         data._token = "{{ csrf_token() }}";
+         JSON.stringify(data)
+        
+        console.log("body", data)
+
+            $.post('{{route('admin.sales.store')}}' ,data, function (data,status) {
+                console.log( status );
+                window.location.href = "{{ route('admin.sales.create')}}"
+            })
+     
+    }
+   
         
     
 </script>
@@ -148,14 +188,14 @@
 
     <div class="card-body">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <div class="col-lg-8 col-md-6 col-sm-6" style="margin-bottom: 2%">
                     <button class="btn btn-success" type="button" data-toggle="modal" data-target="#carritoModal"><i
                             class="fa-solid fa-cart-plus"></i> Ver carrito</button>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="width: 75">
             <div class="row">
                 <div class="table-responsive">
                     <table class="table table-striped" id="products">
@@ -183,6 +223,7 @@
                                     <button class="btn btn-lg" type="submit" onclick="agregarCart({{ $p }} )"><i
                                             class="fa-solid fa-cart-plus"></i>
                                     </button>
+
 
                                 </td>
                             </tr>
@@ -220,19 +261,33 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                             </tbody>
                         </table>
 
                     </div>
+                    <form action="#" method="POST" id="datas" name="datas">
+                        @csrf
+                        <div class="row">
+                            <div class="col " style="text-align:right; align-items:stretch">
+                                <label for="total">TOTAL:</label>
+                            </div>
+                            <div class=" col-md-2">
+                                <input type="text" class="form-control" name="total" id="total" readonly disabled>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
+                    <button type="button" id="comprar" onclick="comprar()" name="comprar"
+                        class="btn btn-primary">Comprar</button>
                 </div>
             </div>
         </div>
 
     </div>
+
+
+
 
     @endsection

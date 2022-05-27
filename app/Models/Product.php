@@ -24,4 +24,8 @@ class Product extends Model
         //parametro = nos dice con que modelo esta la relacion
         return $this->belongsTo(Category::class);
     }
+    public function sales()
+    {
+        return $this->BelongsToMany('App\models\Sale');
+    }
 }
