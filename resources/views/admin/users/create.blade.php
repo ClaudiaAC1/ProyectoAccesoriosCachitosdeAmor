@@ -13,7 +13,7 @@
   </div>
 
   <div class="card-body">
-    <form method="post" action="{{route('admin.users.store')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form class="needs-validation" method="post" action="{{route('admin.users.store')}}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
       @csrf
       <div class="mb-3">
         <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
@@ -58,5 +58,5 @@
 
 
 </div>
-
+<script src="{{asset('js/Validacionimputs.js')}}"></script>
 @endsection

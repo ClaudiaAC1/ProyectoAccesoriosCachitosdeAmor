@@ -11,18 +11,17 @@
   </div>
 
   <div class="card-body">
-    <form method="post" action="{{route('admin.categories.update',$category)}}" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form class="needs-validation" method="post" action="{{route('admin.categories.update',$category)}}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
     @csrf
     @method('PUT')
         <div class="mb-3">
             <label for="InputName" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="InputName" name="nombre" value="{{$category->nombre}}" >
+            <input type="text" class="form-control" id="InputName" name="nombre" value="{{$category->nombre}}" required>
         </div>
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
-
   </div>
-  
 </div>
 
+<script src="{{asset('js/Validacionimputs.js')}}"></script>
 @endsection
