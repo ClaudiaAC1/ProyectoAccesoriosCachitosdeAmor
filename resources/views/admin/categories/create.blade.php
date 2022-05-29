@@ -16,7 +16,7 @@
     @csrf
         <div class="mb-3">
             <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
-            <input type="text" class="form-control" id="InputName" name="nombre" >
+            <input type="text" class="form-control" id="InputName" name="nombre" required>
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
   </form>

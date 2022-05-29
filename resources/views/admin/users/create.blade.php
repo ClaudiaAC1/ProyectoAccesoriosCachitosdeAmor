@@ -17,33 +17,33 @@
       @csrf
       <div class="mb-3">
         <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="InputName" name="nombre">
+        <input type="text" class="form-control" id="InputName" name="nombre" required>
       </div>
 
       <div class="mb-3">
         <label for="InputTel" class="form-label">Telefono</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="InputTel" name="telefono">
+        <input type="text" class="form-control" id="InputTel" name="telefono" required>
       </div>
 
       <div class="mb-3">
         <label for="InputCorreo" class="form-label">Correo Electronico</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="InputCan" name="email">
+        <input type="text" class="form-control" id="InputCan" name="email" required>
       </div>
 
       <div class="mb-3">
         <label for="InputPass" class="form-label">Contraseña</label><a style="color:#FF0000";>*</a>
-        <input type="password" class="form-control" id="InputPass" name="password">
+        <input type="password" class="form-control" id="InputPass" name="password" required>
       </div>
 
       <div class="mb-3">
         <label for="InputPass2" class="form-label">Confirmacion de contraseña</label><a style="color:#FF0000";>*</a>
-        <input type="password" class="form-control" id="InputPass2" name="pass2">
+        <input type="password" class="form-control" id="InputPass2" name="pass2" required>
       </div>
 
       <div class="mb-3">
         <label for="InputRol" class="form-label">Rol</label><a style="color:#FF0000";>*</a>
-        <select class="form-select" aria-label="Default select example" name="rol">
-          <option selected>Selecciona la categoria</option>          
+        <select class="form-select" aria-label="Default select example" name="rol" required>
+          <option selected disable value="">Selecciona la categoria</option>          
           <option value="Administrador">Administrador</option>
           <option value="Cajero">Cajero</option>
                    
