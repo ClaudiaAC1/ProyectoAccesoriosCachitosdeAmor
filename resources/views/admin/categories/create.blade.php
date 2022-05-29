@@ -11,11 +11,11 @@
   </div>
 
   <div class="card-body">
-    <form method="post" action="{{route('admin.categories.store')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form class="needs-validation"  method="post" action="{{route('admin.categories.store')}}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
     @csrf
         <div class="mb-3">
             <label for="InputName" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="InputName" name="nombre" >
+            <input type="text" class="form-control" id="InputName" name="nombre" required>
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
@@ -23,5 +23,7 @@
   </div>
   
 </div>
+
+<script src="{{asset('js/Validacionimputs.js')}}"></script>
 
 @endsection
