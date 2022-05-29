@@ -12,37 +12,37 @@
   </div>
 
   <div class="card-body">
-    <form method="post" action="{{route('admin.users.store')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form class="needs-validation" method="post" action="{{route('admin.users.store')}}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
       @csrf
       <div class="mb-3">
         <label for="InputName" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="InputName" name="nombre">
+        <input type="text" class="form-control" id="InputName" name="nombre" required>
       </div>
 
       <div class="mb-3">
         <label for="InputTel" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="InputTel" name="telefono">
+        <input type="text" class="form-control" id="InputTel" name="telefono" required>
       </div>
 
       <div class="mb-3">
         <label for="InputCorreo" class="form-label">Correo Electronico</label>
-        <input type="text" class="form-control" id="InputCan" name="email">
+        <input type="text" class="form-control" id="InputCan" name="email" required>
       </div>
 
       <div class="mb-3">
         <label for="InputPass" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="InputPass" name="password">
+        <input type="password" class="form-control" id="InputPass" name="password" required>
       </div>
 
       <div class="mb-3">
         <label for="InputPass2" class="form-label">Confirmacion de contraseña</label>
-        <input type="password" class="form-control" id="InputPass2" name="pass2">
+        <input type="password" class="form-control" id="InputPass2" name="pass2" required>
       </div>
 
       <div class="mb-3">
         <label for="InputRol" class="form-label">Rol</label>
-        <select class="form-select" aria-label="Default select example" name="rol">
-          <option selected>Selecciona la categoria</option>          
+        <select class="form-select" aria-label="Default select example" name="rol" required>
+          <option selected disabled value="">Selecciona la categoria</option>          
           <option value="Administrador">Administrador</option>
           <option value="Cajero">Cajero</option>
                    
@@ -57,5 +57,5 @@
 
 
 </div>
-
+<script src="{{asset('js/Validacionimputs.js')}}"></script>
 @endsection

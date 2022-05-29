@@ -8,10 +8,10 @@
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
       if (!form.checkValidity()) {
-        event.preventDefault() //Revisar
-        event.stopPropagation()
+        //event.preventDefault() //Revisar
+        alert("Por favor revise los datos");
+        //event.stopPropagation()
       }
-
       form.classList.add('was-validated')
     }, false)
   })

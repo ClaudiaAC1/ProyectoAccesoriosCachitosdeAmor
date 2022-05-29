@@ -11,7 +11,7 @@
   </div>
 
   <div class="card-body">
-    <form method="post" action="{{route('admin.products.store')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+    <form class="needs-validation" method="post" action="{{route('admin.products.store')}}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
       @csrf
       <div class="mb-3">
         <label for="InputName" class="form-label">Nombre</label>
@@ -23,34 +23,32 @@
 
       <div class="mb-3">
         <label for="InputCan" class="form-label">Cantidad</label>
-        <input type="number" class="form-control" id="InputCan" name="cantidad">
+        <input type="number" class="form-control" id="InputCan" name="cantidad"required>
       </div>
 
       <div class="mb-3">
         <label for="InputPre" class="form-label">Precio</label>
-        <input type="text" class="form-control" id="InputPre" name="precio">
+        <input type="text" class="form-control" id="InputPre" name="precio"required>
       </div>
 
       <div class="mb-3">
         <label for="InputCat" class="form-label">Categoria</label>
-        <select class="form-select" aria-label="Default select example" name="categoria">
-          <option selected>Selecciona la categoria</option>
+        <select class="form-select" aria-label="Default select example" name="categoria"required>
+          <option selected disabled value="">Selecciona la categoria</option>
           @foreach($categories as $c)
           <option value="{{$c->id}}">{{$c->nombre}}</option>
           @endforeach
-
-          
         </select>
       </div>
 
       <div class="mb-3">
         <label for="Inputdes" class="form-label">Descripción</label>
-        <input type="text" class="form-control" id="Inputdes" name="descripcion" onKeypress="return sololetras(event)">
+        <input type="text" class="form-control" id="Inputdes" name="descripcion" onKeypress="return sololetras(event)"required>
       </div>
 
       <div class="mb-3">
         <label for="Inputimg" class="form-label">Imagen</label>
-        <input type="file" class="form-control" id="Inputimg" name="url_img">
+        <input type="file" class="form-control" id="Inputimg" name="url_img"required>
       </div>
 
       <button type="submit" class="btn btn-primary">Agregar</button>
@@ -60,6 +58,7 @@
 
 
 </div>
+<script src="{{asset('js/Validacionimputs.js')}}"></script>
 <script>
       function sololetras(e){
     key=e.KeyCode || e.which;

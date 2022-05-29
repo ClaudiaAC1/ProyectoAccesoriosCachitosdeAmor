@@ -18,10 +18,8 @@
             <input type="text" class="form-control" id="InputName" name="nombre" required>
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
-    </form>
-
+  </form>
   </div>
-  
 </div>
 
 <script src="{{asset('js/Validacionimputs.js')}}"></script>
