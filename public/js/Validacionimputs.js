@@ -9,7 +9,7 @@
     form.addEventListener('submit', event => {
       if (!form.checkValidity()) {
         //event.preventDefault() //Revisar
-        alert("Por favor revise los datos");
+        //alert("Por favor revise los datos");
         //event.stopPropagation()
       }
       form.classList.add('was-validated')
