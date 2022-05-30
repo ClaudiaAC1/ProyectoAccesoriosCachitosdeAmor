@@ -8,6 +8,7 @@
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">EDITAR PRODUCTO</h5>
+        <p> <a style="color:#FF0000";>*</a>  Campos obligatorios</p>
     </div>
 
     <div class="card-body">
@@ -16,22 +17,22 @@
             @method('PUT')
                                        <!--Para introducir el nombre del producto en el negocio.-->
             <div class="mb-3">
-                <label for="InputName" class="form-label">Nombre</label>
+                <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
                 <input type="text" class="form-control" id="InputName" name="nombre" value="{{$product->nombre}}" required>
             </div>
 
             <div class="mb-3">
-                <label for="InputCan" class="form-label">Cantidad</label>
+                <label for="InputCan" class="form-label">Cantidad</label><a style="color:#FF0000";>*</a>
                 <input type="number" class="form-control" id="InputCan" name="cantidad" value="{{$product->cantidad}}" required>
             </div>
 
             <div class="mb-3">
-                <label for="InputPre" class="form-label">Precio</label>
+                <label for="InputPre" class="form-label">Precio</label><a style="color:#FF0000";>*</a>
                 <input type="text" class="form-control" id="InputPre" name="precio" value="{{$product->precio}}" required>
             </div>
 
             <div class="mb-3">
-                <label for="InputCat" class="form-label">Categoria</label>
+                <label for="InputCat" class="form-label">Categoria</label><a style="color:#FF0000";>*</a>
                 <select class="form-select" aria-label="Default select example" name="categoria" value="{{$product->category_id}}" required>
                     @foreach($categories as $c)
                     <option value="{{$c->id}}">{{$c->nombre}}</option>

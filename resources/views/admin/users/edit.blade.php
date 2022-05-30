@@ -16,34 +16,34 @@
       @csrf
       @method('PUT')
       <div class="mb-3">
-        <label for="InputName" class="form-label">Nombre</label>
+        <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
         <input type="text" class="form-control" id="InputName" name="nombre" value="{{$user->nombre}}" required>
       </div>
 
       <div class="mb-3">
-        <label for="InputTel" class="form-label">Telefono</label>
+        <label for="InputTel" class="form-label">Teléfono</label><a style="color:#FF0000";>*</a>
         <input type="text" class="form-control" id="InputTel" name="telefono" value="{{$user->telefono}}" required>
       </div>
 
       <div class="mb-3">
-        <label for="InputCorreo" class="form-label">Correo Electronico</label>
+        <label for="InputCorreo" class="form-label">Correo Electrónico</label><a style="color:#FF0000";>*</a>
         <input type="text" class="form-control" id="InputCan" name="email" value="{{$user->email}}" required>
       </div>
 
       <div class="mb-3">
-        <label for="InputPass" class="form-label">Contraseña</label>
+        <label for="InputPass" class="form-label">Contraseña</label><a style="color:#FF0000";>*</a>
         <input type="password" class="form-control" id="InputPass" name="password" value="{{$user->password}}" required>
       </div>
 
       <div class="mb-3">
-        <label for="InputPass2" class="form-label">Confirmacion de contraseña</label>
+        <label for="InputPass2" class="form-label">Confirmación de contraseña</label><a style="color:#FF0000";>*</a>
         <input type="password" class="form-control" id="InputPass2" name="pass2" value="{{$user->password}}" required>
       </div>
 
       <div class="mb-3">
-        <label for="InputRol" class="form-label">Rol</label>
+        <label for="InputRol" class="form-label">Rol</label><a style="color:#FF0000";>*</a>
         <select class="form-select" aria-label="Default select example" name="rol" required>
-          <option selected disabled value="">Selecciona la categoria</option>          
+          <option selected disabled value="">Selecciona la categoría</option>          
           <option value="Administrador">Administrador</option>
           <option value="Cajero">Cajero</option>
                    

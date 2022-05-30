@@ -179,7 +179,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background: #FFF2BE;">
+                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background: #A0EECC;">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
