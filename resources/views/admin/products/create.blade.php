@@ -22,12 +22,12 @@
           <!--Para introducir la cantidad de existencia del producto en el negocio-->
       <div class="mb-3">
         <label for="InputCan" class="form-label">Cantidad:</label><a style="color:#FF0000";>*</a>
-        <input type="number"placeholder="Solo cantidades positivas" class="form-control" id="InputCan" name="cantidad"   onKeypress="return solonumeros(event)"required>
+        <input type="text"placeholder="Solo cantidades positivas" class="form-control" id="InputCan" name="cantidad" onKeypress="return solonumeros(event,this)" required/>
       </div>
           <!--Para introducir el PRECIO del producto en el negocio-->
       <div class="mb-3">
         <label for="InputPre" class="form-label">Precio:</label><a style="color:#FF0000";>*</a>
-        <input type="text" placeholder="$150.00" class="form-control" id="InputPre" name="precio" required> 
+        <input type="text" placeholder="$150.00" class="form-control" id="InputPre" name="precio"onkeypress="return solodecimales(event,this)" required> 
       </div>
           <!--Para introducir la categoria -->
       <div class="mb-3">
@@ -59,5 +59,6 @@
 </div>
 <script src="{{asset('js/Validacionimputs.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/solonumeros.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/solodecimales.js')}}"></script>
 <script src="{{asset('js/sololetras.js')}}"></script>
 @endsection

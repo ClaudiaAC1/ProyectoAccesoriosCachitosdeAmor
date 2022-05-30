@@ -1,15 +1,18 @@
-function solonumeros(evt)
+function solonumeros(evt,input)
 	{
-		var code = (evt.wich) ? evt.wich : evt.keyCode;
-		if(code>=48 && code<=57)
+		var key = window.Event ? evt.which : evt.keyCode;   
+		var chark = String.fromCharCode(key);
+    	var tempValue = input.value+chark;
+		var isNumber = (key >= 48 && key <= 57);
+		if(isNumber)
 		{
-			return true;
-		}else if(code<8)
-		{
-			return true;
+			return filternum(tempValue);
 		}
-		else 
-		{
-			return false;
-		}
+
+
+		return false;
+	}
+	function filternum(__val__){
+		var preg = /^([0-9]{1,4})$/; 
+		return (preg.test(__val__) === true);
 	}
