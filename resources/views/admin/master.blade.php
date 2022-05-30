@@ -179,7 +179,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background: #FFF2BE;">
+                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background: #F6318C;">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -187,7 +187,7 @@
                     </button>
 
 
-                    <div class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100">
+                    <div class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100" style="color:white;">
                         @yield('module')
                         <!-- TITULO DE CABECERA PARA EL MODULO -->
                     </div>
@@ -196,18 +196,18 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <li class="nav-item dropdown no-arrow mx-1 ">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
+                                <span class="badge badge-danger badge-counter">1+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Alerts Center
+                                    Notificaciones
                                 </h6>
 
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -232,7 +232,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->nombre
+                                <span class="mr-2 d-none d-lg-inline  small" style="color:white;">{{ auth()->user()->nombre
                                     }}</span>
                                 <img class="img-profile rounded-circle" src="{{asset('img/perfil.jpeg')}}">
                             </a>
