@@ -47,31 +47,31 @@ class ProductController extends Controller
             $request->all(),
             [
                 'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
-                'url_img' => 'required|image',
-                'precio' => 'required|regex:/^[1-9]+\\d*]{1,4}.[0.9]{2}$/',
-                'categoria' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
-                'cantidad' => 'required|regex:/^[[1-9]+\\d*]{1,4}$/',
+                'cantidad' => 'required|regex:/^\d+$/',
+                'precio' => 'required|regex:/^[0-9]+\.[0-9]{2}+$/',
+                'categoria' => 'required',
                 'descripcion' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
+                'url_img' => 'required|image',
             ],
             [
                 'nombre.required' => 'Se requiere de un nombre para el producto',
-                'nombre.regex' => 'El formato del nombre para el producto no es el correcto',
+                'nombre.regex' => 'El formato del nombre para el producto no es el correcto, debe empezar por mayúscula.',
                 'url_img.required' => 'Se requiere de una imagen para el producto',
                 'url_img.image' => 'El archivo no es una imagen',
-                'categoria.required' => 'Se requiere seleccion de una categoria',
+                'categoria.required' => 'Se requiere la seleccion de una categoria',
                 'categoria.regex' => 'El formato del nombre para la categoría no es el correcto.',
                 'cantidad.regex' => 'Solo cantidades permitida de 0 a 9999.',
                 'precio.required' => 'Se requiere precio del producto.',
-                'precio.regex' => 'El precio debe tener dos cecimales y ser positivo.',
-                'descripcion.required' => 'Se requiere una descripcion del producto.',
-                'descripcion.regex' => 'Solo se aceptan caracteres del alfabeto.',
-                'cantidad.required' => 'Se requiere la cantidad existente del producto'
+                'precio.regex' => 'El precio debe tener dos decimales y ser positivo.',
+                'descripcion.required' => 'Se requiere una descripción del producto.',
+                'descripcion.regex' => 'Sólo se aceptan caracteres del alfabeto.',
+                'cantidad.required' => 'Se requiere una cantidad existente del producto'
             ]
         );
 
         if ($validator->fails()) {
             return back()->withErrors($validator)
-                ->with('message', 'Se ha producido un error!')
+                ->with('message', '¡Se ha producido un error!')
                 ->with('typealert', 'danger')->withInput();
         }
 
@@ -129,27 +129,32 @@ class ProductController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'nombre' => 'required',
-                'url_img' => 'required|image',
-                'precio' => 'required',
+                'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
+                'cantidad' => 'required|regex:/^\d+$/',
+                'precio' => 'required|regex:/^[0-9]+\.[0-9]{2}+$/',
                 'categoria' => 'required',
-                'cantidad' => 'required',
-                'descripcion' => 'required',
+                'descripcion' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
+                'url_img' => 'required|image',
             ],
-            [   
+            [
                 'nombre.required' => 'Se requiere de un nombre para el producto',
+                'nombre.regex' => 'El formato del nombre para el producto no es el correcto, debe empezar por mayúscula.',
                 'url_img.required' => 'Se requiere de una imagen para el producto',
                 'url_img.image' => 'El archivo no es una imagen',
-                'categoria.required' => 'Se requiere seleccion de una categoria',
-                'precio.required' => 'Se requiere precio del producto',
-                'descripcion.required' => 'Se requiere una descripcion del producto',
-                'cantidad.required' => 'Se requiere la cantidad existente del producto'
+                'categoria.required' => 'Se requiere la seleccion de una categoria',
+                'categoria.regex' => 'El formato del nombre para la categoría no es el correcto.',
+                'precio.required' => 'Se requiere precio del producto.',
+                'precio.regex' => 'El precio debe tener dos decimales y ser positivo.',
+                'descripcion.required' => 'Se requiere una descripción del producto.',
+                'descripcion.regex' => 'Sólo se aceptan caracteres del alfabeto.',
+                'cantidad.required' => 'Se requiere una cantidad existente del producto',
+                'cantidad.regex' => 'Solo cantidades permitida de 0 a 9999.',
             ]
         );
 
         if ($validator->fails()) {
             return back()->withErrors($validator)
-                ->with('message', 'Se ha producido un error!')
+                ->with('message', '¡Se ha producido un error!')
                 ->with('typealert', 'danger')->withInput();
         }
 

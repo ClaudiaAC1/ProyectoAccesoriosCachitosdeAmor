@@ -107,9 +107,6 @@
         </div>
     </section>
 
-
-
-
     <!-- Footer-->
     <footer class="py-5 bg-black">
         <div class="container px-5">
@@ -118,7 +115,6 @@
             Facebook: Cachitos de amor&nbsp&nbsp&nbsp&nbsp
             <IMG SRC="https://www.mexmads.com/wp-content/uploads/2016/08/Instagram-logo.png"  width="25" height="25" >
             Instagram: @CachitosdeAmor </p>
-           
             <p class="m-0 text-center text-white small">Derechos reservados TeamCIREA &copy; 😀</p>
         </div>
     </footer>

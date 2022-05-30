@@ -26,11 +26,17 @@
         <tr>
           <th scope="row">{{$c->id}}</th>
           <td>{{$c->nombre}}</td>
-
           <td colspan="2" class="row">
+<<<<<<< HEAD
             <a class="btn btn-warning" style="width: 5rem;" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>
           </td>
           <td>
+=======
+            <a class="btn btn-warning col-5" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>       
+</td>
+
+<td>
+>>>>>>> Erik
             <form method="post" action="{{route('admin.categories.destroy',$c)}}" class="col-6 ">
               @csrf
               @method('DELETE')

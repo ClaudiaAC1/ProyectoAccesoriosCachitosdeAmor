@@ -40,7 +40,6 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav  sidebar sidebar-dark accordion" style="background-color: #F6318C;" id="accordionSidebar">
-
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center mt-4 mb-4" href="#">
                 <div class="sidebar-brand-icon">
@@ -55,7 +54,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-tachometer-alt" ></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -63,8 +62,8 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Modulos
+            <div class="sidebar-heading" style="color: #FFFFFF;">
+                Módulos
             </div>
 
             <!-- Nav Item - Pages Collapse Menu  VENTAS-->
@@ -179,7 +178,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background: #F6318C;">
+                <nav class="navbar navbar-expand topbar mb-4 static-top shadow" style="background: #A0EECC;">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -201,13 +200,13 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">1+</span>
+                                <span class="badge badge-danger badge-counter">1</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Notificaciones
+                                    Centro de Alertas
                                 </h6>
 
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -217,8 +216,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
+                                        <div class="small text-gray-500">30 de Mayo, 2022</div>
+                                        ¡Hoy toca revisión! ¡Ánimo!
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
@@ -240,8 +239,8 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar sesión
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" ></i>
+                                           Cerrar sesión
                                 </a>
                             </div>
                         </li>
