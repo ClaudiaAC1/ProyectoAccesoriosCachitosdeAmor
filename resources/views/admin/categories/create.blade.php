@@ -8,7 +8,7 @@
 <div class="card">
   <div class="card-header">
     <h5 class="card-title">NUEVA CATEGORIA</h5>
-    <p> <a style="color:#FF0000";>*</a>  Campos obligatorios</p>
+    <p> <a style="color:#FF0000";>*</a>  Campos obligatorios.</p>
   </div>
 
   <div class="card-body">

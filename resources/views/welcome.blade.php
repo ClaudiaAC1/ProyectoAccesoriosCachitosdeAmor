@@ -28,10 +28,8 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item px-4"><a class="nav-link" href="#">CATALOGO</a></li>
-                    <li class="nav-item px-4"><a class="nav-link" href="#">NOSOTROS</a></li>
+                    <li class="nav-item px-4"><a class="nav-link"  href="{{route('catalogo')}}">CATALOGO</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('auth.login')}}">INGRESAR</a></li>
-
                 </ul>
             </div>
         </div>
@@ -56,7 +54,7 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-4"><img class="img-fluid rounded-circle" src="{{asset('img/collage2.png')}}" alt="..." /></div>
+                    <div class="p-7"><img class="img-fluid rounded-circle" src="{{asset('img/collage2.png')}}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
@@ -73,7 +71,7 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
-                    <div class=""><img class="img-fluid rounded-circle" src="{{asset('img/Aretes h.jpg')}}" alt="..." /></div>
+                    <div class="p-8"><img class="img-fluid rounded-circle" src="{{asset('img/Aretes h.jpg')}}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
@@ -95,16 +93,14 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-4"><img class="img-fluid rounded-circle" src="https://blog.wasi.co/wp-content/uploads/2019/12/redes-sociales-de-la-agencia-inmobiliaria.jpg" alt="..." /></div>
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{asset('img/pulserasALV.jpg')}}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">¡Conócenos!</h2>
-                        <i class="bi bi-instagram"></i>
-                        <p style="text-align:justify">Visita nuestras redes sociales, en las cuales puedes encontrar distintas 
-                        dinámicas para ganarte fabulosos premios y descuentos.</p>
-                        <p style="text-align:center"><b>¡Comparte y gana!</b></p>
-                        <p style="text-align:justify"> *Promoción válida este verano 2022.</p>
+                        <h2 class="display-4">¿Porqué nosotros?</h2>
+                        <p style="text-align:justify">Por que buscamos ir de la mano con las nuevas tendencias en accesorios 
+                        sin olvidar mantener el equilibrio entre calidad y precio🦋✨.</p>
+                        
                     </div>
                 </div>
             </div>

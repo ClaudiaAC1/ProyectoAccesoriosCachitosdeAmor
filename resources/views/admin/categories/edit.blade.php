@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title', 'Ediar categoria')
+@section('title', 'Editar categoria')
 
 @section('module', 'EDITAR CATEGORIA')
 

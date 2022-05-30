@@ -28,13 +28,13 @@
           <td>{{$c->nombre}}</td>
 
           <td colspan="2" class="row">
-            <a class="btn btn-warning col-2" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>
-</td>
-<td>
+            <a class="btn btn-warning" style="width: 5rem;" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>
+          </td>
+          <td>
             <form method="post" action="{{route('admin.categories.destroy',$c)}}" class="col-6 ">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-danger">Eliminar</button>
+              <button type="submit" style="width: 5rem;" class="btn btn-danger">Borrar</button>
             </form>
           </td>
         </tr>

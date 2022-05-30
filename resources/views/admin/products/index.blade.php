@@ -36,14 +36,14 @@
           <td>{{$p->precio}}</td>
           <td>{{$p->descripcion}}</td>
           <td>
-            <a class="btn btn-warning " href="{{route('admin.products.edit', $p)}}" role="button">Editar</a>
+            <a class="btn btn-warning " style="width: 5rem;" href="{{route('admin.products.edit', $p)}}" role="button">Editar</a>
 
           </td>
           <td>
             <form method="post" action="{{route('admin.products.destroy',$p)}}">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-danger">Eliminar</button>
+              <button type="submit" style="width: 5rem;" class="btn btn-danger">Borrar</button>
             </form>
           </td>
         </tr>
