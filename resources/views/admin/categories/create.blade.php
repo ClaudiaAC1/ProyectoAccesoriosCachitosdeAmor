@@ -7,13 +7,8 @@
 @section('content')
 <div class="card">
   <div class="card-header">
-<<<<<<< HEAD
-    <h5 class="card-title">NUEVA CATEGORIA</h5>
-    <p> <a style="color:#FF0000";>*</a>  Campos obligatorios.</p>
-=======
     <h5 class="card-title"style="color: #000000;">NUEVA CATEGORÍA</h5>
     <p> <a style="color:#FF0000";>*</a>  Campos obligatorios</p>
->>>>>>> Erik
   </div>
 
   <div class="card-body">
