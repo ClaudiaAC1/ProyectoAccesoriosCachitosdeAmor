@@ -27,7 +27,7 @@
           <!--Para introducir el PRECIO del producto en el negocio-->
       <div class="mb-3">
         <label for="InputPre" class="form-label">Precio:</label><a style="color:#FF0000";>*</a>
-        <input type="text" placeholder="$" class="form-control" id="InputPre" name="precio" required> 
+        <input type="text" placeholder="$" class="form-control" id="InputPre" name="precio" onkeypress="return solonumeros(event)" required> 
       </div>
           <!--Para introducir la categoria -->
       <div class="mb-3">
@@ -58,23 +58,6 @@
 
 </div>
 <script src="{{asset('js/Validacionimputs.js')}}"></script>
-<script>
-      function sololetras(e){
-    key=e.KeyCode || e.which;
-    teclado=String.fromCharCode(key).toLowerCase();
-
-    letras = "abcdefghijklmñnopqrstuvwxyz";
-    especiales = "8-37-38-46-164"
-    teclado_especial=false;
-    for(var i in especiales){
-        if(key==especiales[i]){
-            teclado_especial=true;break;
-        }
-    }
-    if(letras.indexOf(teclado)==-1 && !teclado_especial){
-         return false;
-    }
-       
-}
-</script>
+<script type="text/javascript" src="{{asset('js/solonumeros.js')}}"></script>
+<script src="{{asset('js/sololetras.js')}}"></script>
 @endsection
