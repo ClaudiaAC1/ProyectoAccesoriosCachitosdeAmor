@@ -10,13 +10,8 @@
             <div class="col col-xl-10">
                 <div class="card" style="border-radius: 1rem;">
                     <div class="row g-0">
-<<<<<<< HEAD
-                        <div class="col-md-6 col-lg-5 d-none d-md-block">
-                            <img src="{{asset('img/pulseras c.jpg')}}"  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-=======
                         <div class="col-md-7 col-lg-5 d-none d-md-block">
                             <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
->>>>>>> Erik
                         </div>
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
