@@ -16,27 +16,27 @@
       @csrf
       @method('PUT')
       <div class="mb-3">
-        <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="InputName" name="nombre" value="{{$user->nombre}}" required>
+        <label for="InputName" class="form-label">Nombre:</label><a style="color:#FF0000";>*</a>
+        <input type="text" class="form-control" id="InputName" name="nombre" value="{{$user->nombre}}" onKeypress="return sololetras(event)"required>
       </div>
 
       <div class="mb-3">
-        <label for="InputTel" class="form-label">Teléfono</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="InputTel" name="telefono" value="{{$user->telefono}}" required>
+        <label for="InputTel" class="form-label">Teléfono:</label><a style="color:#FF0000";>*</a>
+        <input type="text" class="form-control" id="InputTel" name="telefono" value="{{$user->telefono}}" onKeypress="return solonumeros(event)"required>
       </div>
 
       <div class="mb-3">
-        <label for="InputCorreo" class="form-label">Correo Electrónico</label><a style="color:#FF0000";>*</a>
+        <label for="InputCorreo" class="form-label">Correo Electrónico:</label><a style="color:#FF0000";>*</a>
         <input type="text" class="form-control" id="InputCan" name="email" value="{{$user->email}}" required>
       </div>
 
       <div class="mb-3">
-        <label for="InputPass" class="form-label">Contraseña</label><a style="color:#FF0000";>*</a>
+        <label for="InputPass" class="form-label">Contraseña:</label><a style="color:#FF0000";>*</a>
         <input type="password" class="form-control" id="InputPass" name="password" value="{{$user->password}}" required>
       </div>
 
       <div class="mb-3">
-        <label for="InputPass2" class="form-label">Confirmación de contraseña</label><a style="color:#FF0000";>*</a>
+        <label for="InputPass2" class="form-label">Confirmación de contraseña:</label><a style="color:#FF0000";>*</a>
         <input type="password" class="form-control" id="InputPass2" name="pass2" value="{{$user->password}}" required>
       </div>
 
@@ -58,4 +58,6 @@
 </div>
 
 <script src="{{asset('js/Validacionimputs.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/solonumeros.js')}}"></script>
+<script src="{{asset('js/sololetras.js')}}"></script>
 @endsection

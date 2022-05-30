@@ -44,18 +44,20 @@ class UserController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'nombre' => 'required',
-                'telefono' => 'required',
-                'email' => 'required',
+                'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
+                'telefono' => 'required|regex:/^[0-9]{10}$/',
+                'email' => 'required|regex:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/', 
                 'rol' => 'required',
-                'password' => 'required|regex:/^[a-zÀ-ÿ\s]{8,15}/',
+                'password' => 'required|regex: /^[A-Za-z0-9\_]{8,15}$/',
                 'pass2' => 'required|same:password'
             ],
             [
                 'nombre.required' => 'Se requiere de un nombre para el usuario',
-                'telefono.required' => 'Se requiere de un numero de telefono para el usuario',
+                'telefono.required' => 'Se requiere de un número de télefono para el usuario',
+                'telefono.regex' => 'El número de télefono es inválido.',
                 'email.required' => 'Se requiere de un correo electronico para el usuario',
-                'rol.required' => 'Se requiere de un rol electronico para el usuario',
+                'email.regex' => 'El formato del Correo Electronico es incorrecto',
+                'rol.required' => 'Se requiere de un rol para el usuario',
                 'password.required' => 'Se requiere contraseña para el usuario',
                 'password.regex' => 'La contraseña debe contener al menos 8 carácteres',
                 'pass2.required' => 'Se requiere confirmar contraseña',
@@ -65,7 +67,7 @@ class UserController extends Controller
 
         if ($validator->fails()) {
             return back()->withErrors($validator)
-                ->with('message', 'Se ha producido un error!')
+                ->with('message', '¡Se ha producido un error!')
                 ->with('typealert', 'danger')->withInput();
         }
 
@@ -121,19 +123,22 @@ class UserController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'nombre' => 'required',
-                'telefono' => 'required',
-                'email' => 'required',
+                'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
+                'telefono' => 'required|regex:/^[0-9]{10}$/',
+                'email' => 'required|regex:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/', 
                 'rol' => 'required',
-                'password' => 'required',
+                'password' => 'required|regex: /^[A-Za-z0-9\_]{8,15}$/',
                 'pass2' => 'required|same:password'
             ],
             [
                 'nombre.required' => 'Se requiere de un nombre para el usuario',
-                'telefono.required' => 'Se requiere de un numero de telefono para el usuario',
+                'telefono.required' => 'Se requiere de un número de télefono para el usuario',
+                'telefono.regex' => 'El número de télefono es inválido.',
                 'email.required' => 'Se requiere de un correo electronico para el usuario',
-                'rol.required' => 'Se requiere de un rol electronico para el usuario',
+                'email.regex' => 'El formato del Correo Electronico es incorrecto',
+                'rol.required' => 'Se requiere de un rol para el usuario',
                 'password.required' => 'Se requiere contraseña para el usuario',
+                'password.regex' => 'La contraseña debe contener al menos 8 carácteres',
                 'pass2.required' => 'Se requiere confirmar contraseña',
                 'pass2.same' => 'No coindicen las contraseñas'
             ]

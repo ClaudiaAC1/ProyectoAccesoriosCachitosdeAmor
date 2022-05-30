@@ -15,25 +15,27 @@
         <form class="needs-validation" method="post" action="{{route('admin.products.update',$product)}}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
             @csrf
             @method('PUT')
-                                       <!--Para introducir el nombre del producto en el negocio.-->
+            <!--Para introducir el nombre del producto en el negocio.-->
             <div class="mb-3">
-                <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
-                <input type="text" class="form-control" id="InputName" name="nombre" value="{{$product->nombre}}" required>
+                <label for="InputName" class="form-label">Nombre:</label><a style="color:#FF0000";>*</a>
+                <input type="text" class="form-control" id="InputName" name="nombre" value="{{$product->nombre}}"  onKeypress="return sololetras(event)" required>
             </div>
+            <!--Para introducir la cantidad del producto en el negocio.-->
 
             <div class="mb-3">
-                <label for="InputCan" class="form-label">Cantidad</label><a style="color:#FF0000";>*</a>
-                <input type="number" class="form-control" id="InputCan" name="cantidad" value="{{$product->cantidad}}" required>
+                <label for="InputCan" class="form-label">Cantidad:</label><a style="color:#FF0000";>*</a>
+                <input type="number" class="form-control" placeholder="Solo cantidades mayores a 0"id="InputCan" name="cantidad" value="{{$product->cantidad}}"  onKeypress="return solonumeros(event)"required>
             </div>
-
+                    <!--Para introducir el PRECIOdel producto en el negocio.-->
             <div class="mb-3">
-                <label for="InputPre" class="form-label">Precio</label><a style="color:#FF0000";>*</a>
+                <label for="InputPre" class="form-label">Precio:</label><a style="color:#FF0000";>*</a>
                 <input type="text" class="form-control" id="InputPre" name="precio" value="{{$product->precio}}" required>
             </div>
+            <!--Para introducir la categoria del producto en el negocio.-->
 
             <div class="mb-3">
-                <label for="InputCat" class="form-label">Categoria</label><a style="color:#FF0000";>*</a>
-                <select class="form-select" aria-label="Default select example" name="categoria" value="{{$product->category_id}}" required>
+                <label for="InputCat" class="form-label">Categoria:</label><a style="color:#FF0000";>*</a>
+                <select class="form-select" aria-label="Default select example" name="categoria" value="{{$product->category_id}}"  required>
                     @foreach($categories as $c)
                     <option value="{{$c->id}}">{{$c->nombre}}</option>
                     @endforeach
@@ -41,17 +43,19 @@
 
                 </select>
             </div>
+            <!--Para introducir la descripcion del producto en el negocio.-->
 
             <div class="mb-3">
-                <label for="Inputdes" class="form-label">Descripción</label>
-                <input type="text" class="form-control" id="Inputdes" name="descripcion" value="{{$product->descripcion}}"required>
+                <label for="Inputdes" class="form-label">Descripción:</label>
+                <input type="text" class="form-control" id="Inputdes" name="descripcion" value="{{$product->descripcion}}" required>
             </div>
+            <!--Para introducir la imagen del producto en el negocio.-->
 
             <div class="mb-3">
-                <label for="Inputimg" class="form-label">Imagen</label>
+                <label for="Inputimg" class="form-label">Imagen del Producto:</label>
                 <input type="file" class="form-control" id="Inputimg" name="url_img" value="{{$product->url_img}}"required>
             </div>
-
+            <!--BOTON CONFIRMAR.-->
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
     </div>

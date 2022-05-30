@@ -48,13 +48,13 @@ class CategoryController extends Controller
             ],
             [
                 'nombre.required' => 'Se requiere de un nombre de la categoria',
-                'nombre.regex' => 'Formato del nombre incorrecto'
+                'nombre.regex' => 'Formato del nombre incorrecto, el nombre debe comenzar en mayúscula.'
             ]
         );
 
         if ($validator->fails()) {
             return back()->withErrors($validator)
-                ->with('message', 'Se ha producido un error!')
+                ->with('message', '¡Se ha producido un error!')
                 ->with('typealert', 'danger')->withInput();
         }
 
@@ -105,16 +105,17 @@ class CategoryController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'nombre' => 'required'
+                'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/'
             ],
             [
-                'nombre.required' => 'Se requiere de un nombre de la categoria'
+                'nombre.required' => 'Se requiere de un nombre de la categoria',
+                'nombre.regex' => 'Formato del nombre incorrecto, el nombre debe comenzar en mayúscula.'
             ]
         );
 
         if ($validator->fails()) {
             return back()->withErrors($validator)
-                ->with('message', 'Se ha producido un error!')
+                ->with('message', '¡Se ha producido un error!')
                 ->with('typealert', 'danger')->withInput();
         }
 

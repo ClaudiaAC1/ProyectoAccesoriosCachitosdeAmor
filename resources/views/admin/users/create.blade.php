@@ -17,12 +17,12 @@
       @csrf
       <div class="mb-3">
         <label for="InputName" class="form-label">Nombre</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="InputName" name="nombre" required>
+        <input type="text" class="form-control" id="InputName" name="nombre" onKeypress="return sololetras(event)"required>
       </div>
 
       <div class="mb-3">
         <label for="InputTel" class="form-label">Telefono</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="InputTel" name="telefono" required>
+        <input type="text" class="form-control" id="InputTel" name="telefono" onKeypress="return solonumeros(event)"required>
       </div>
 
       <div class="mb-3">
@@ -59,4 +59,6 @@
 
 </div>
 <script src="{{asset('js/Validacionimputs.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/solonumeros.js')}}"></script>
+<script src="{{asset('js/sololetras.js')}}"></script>
 @endsection

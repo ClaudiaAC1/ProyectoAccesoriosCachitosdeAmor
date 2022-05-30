@@ -22,12 +22,12 @@
           <!--Para introducir la cantidad de existencia del producto en el negocio-->
       <div class="mb-3">
         <label for="InputCan" class="form-label">Cantidad:</label><a style="color:#FF0000";>*</a>
-        <input type="number"placeholder="Solo cantidades positivas" class="form-control" id="InputCan" name="cantidad"required>
+        <input type="number"placeholder="Solo cantidades positivas" class="form-control" id="InputCan" name="cantidad"   onKeypress="return solonumeros(event)"required>
       </div>
           <!--Para introducir el PRECIO del producto en el negocio-->
       <div class="mb-3">
         <label for="InputPre" class="form-label">Precio:</label><a style="color:#FF0000";>*</a>
-        <input type="text" placeholder="$" class="form-control" id="InputPre" name="precio" onkeypress="return solonumeros(event)" required> 
+        <input type="text" placeholder="$150.00" class="form-control" id="InputPre" name="precio" required> 
       </div>
           <!--Para introducir la categoria -->
       <div class="mb-3">
@@ -42,7 +42,7 @@
 
       <div class="mb-3">
         <label for="Inputdes" class="form-label">Descripción:</label><a style="color:#FF0000";>*</a>
-        <input type="text" class="form-control" id="Inputdes" name="descripcion" required>
+        <input type="text" class="form-control" id="Inputdes" name="descripcion" onKeypress="return sololetras(event)" required>
       </div>
           <!--Para introducir una imagen de archivos -->
       <div class="mb-3">
