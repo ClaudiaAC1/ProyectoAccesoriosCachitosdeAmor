@@ -46,7 +46,9 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Accesorios Cachitos de Amor 2022</span>
+                        <span>Copyright &copy; Accesorios Cachitos de Amor 2022<br>
+                        Derechos reservados DESARROLLADORES DE SOFTWARE ARCIE, S.A. &copy; 😎
+                       </span>
                     </div>
                 </div>
             </footer>

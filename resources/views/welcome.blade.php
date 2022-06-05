@@ -28,7 +28,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item px-4"><a class="nav-link"  href="{{route('catalogo')}}">CATALOGO</a></li>
+                    <li class="nav-item px-4"><a class="nav-link"  href="{{route('catalogo')}}">CATÁLOGO</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('auth.login')}}">INGRESAR</a></li>
                 </ul>
             </div>
@@ -76,7 +76,7 @@
                 <div class="col-lg-6">
                     <div class="p-5">
                         <h2 class="display-4">¡¡De todo un poco!!</h2>
-                        <p style="text-align:justify">Realizamos trabajos como <br>
+                        <p style="text-align:justify">Realizamos trabajos como: <br>
                             🔸Aretes <br>
                             🔸Pulseras <br>
                             🔸Collares <br>
@@ -110,12 +110,12 @@
     <!-- Footer-->
     <footer class="py-5 bg-black">
         <div class="container px-5">
-            <p class="m-0 text-center text-white small">Copyright &copy; Accesorios Cachitos de Amor 2022. Contacto: cachitosdeamor@pedidos.com</p>
+            <p class="m-0 text-center text-white small">Copyright &copy; Accesorios Cachitos de Amor 2022. Contacto: pedidos@cachitosdeamor.com</p>
             <p class="m-0 text-center text-white small"><IMG SRC="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png"  width="25" height="25" >
             Facebook: Cachitos de amor&nbsp&nbsp&nbsp&nbsp
             <IMG SRC="https://www.mexmads.com/wp-content/uploads/2016/08/Instagram-logo.png"  width="25" height="25" >
             Instagram: @CachitosdeAmor </p>
-            <p class="m-0 text-center text-white small">Derechos reservados TeamCIREA &copy; 😀</p>
+            <p class="m-0 text-center text-white small">Derechos reservados DESARROLLADORES DE SOFTWARE ARCIE, S.A. &copy; 😎</p>
         </div>
     </footer>
     

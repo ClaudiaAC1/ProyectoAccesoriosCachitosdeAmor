@@ -8,11 +8,11 @@
 @section('content')
 <div class="card" style="width: 68rem;">
     <div class="card-header">
-        <h5 class="card-title">USUARIOS</h5>
+        <h5 class="card-title"style="color: #000000;" >USUARIOS</h5>
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table" style="color: #000000;" >
             <thead>
                 <tr>
                     <th scope="col">#</th>
