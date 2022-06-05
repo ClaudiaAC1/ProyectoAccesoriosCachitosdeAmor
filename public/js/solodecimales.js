@@ -13,6 +13,6 @@ function solodecimales(evt,input){
     
 }
 function filter(__val__){
-    var preg = /^([0-9]{0,3}\.?[0-9]{0,2})$/; 
+    var preg = /^([0-9]{0,5}\.?[0-9]{0,2})$/; 
     return (preg.test(__val__) === true);
 }
