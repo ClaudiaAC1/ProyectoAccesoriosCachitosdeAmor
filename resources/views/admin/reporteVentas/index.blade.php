@@ -7,18 +7,18 @@
 @section('content')
 <div class="card">
     <div class=col-12>
-        <h5 class="card-title">Reporte de las ventas</h5>
+        <h5 class="card-title" style="color: #000000;">Reporte de las ventas</h5>
     </div>
-<div class="container-fluid mb-4">
+<div class="container-fluid mb-4" style="color:#000000;">
     
         <!--Input de busqueda-->
-<div class="containes-fluid mb-4">
+<div class="containes-fluid mb-4"style="color:#000000;">
     <div class = "row">
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="ID del reporte" name="inputBusqueda" value="">
+            <input type="text" style="color: #000000;"class="form-control" placeholder="ID del reporte" name="inputBusqueda" value="">
         </div>
         <!--Selector de Año-->
-        <div class="col-3">
+        <div class="col-3"style="color: #000000;">
             <div class="input-group mb-3">
                 <label class="input-group-text" for="inputSelectorMes">Mes</label>
                 <select class="form-select" id="inputSelectorMes" name="inputSelectorMes" value="">
@@ -50,7 +50,7 @@
         </div>
         <!--Boton de busqueda -->
         <div class="col-3">
-            <button type="submit" class="btn btn-light d-flex ps-3 pe-3">
+            <button style="color: #000000;" type="submit" class="btn btn-light d-flex ps-3 pe-3">
                 <span class="me-3">&#128269</span>
                 Buscar
             </button>
@@ -68,7 +68,7 @@
 
 <div ckass="conteiner-fluid">
     <div class="col-12">
-        <table class="table">
+        <table class="table"style="color: #000000;">
             <thead>
                 <tr>
                     @foreach($camposTabla as $campo)
@@ -210,7 +210,7 @@
 
 
 
-<!-- este pedo ya no, lo traeré del controller con un for each
+<!-- este pedo ya no, lo traeré del controller con un for  XD
 <div class="card-body">
     <table class="table">
       <thead>

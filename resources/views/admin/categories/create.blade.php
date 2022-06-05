@@ -8,14 +8,14 @@
 <div class="card">
   <div class="card-header">
     <h5 class="card-title"style="color: #000000;">NUEVA CATEGORÍA</h5>
-    <p> <a style="color:#FF0000";>*</a>  Campos obligatorios</p>
+    <p style="color: #000000;"> <a style="color:#FF0000";>*</a >  Campos obligatorios</p>
   </div>
 
   <div class="card-body">
     <form class="needs-validation"  method="post" action="{{route('admin.categories.store')}}" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
     @csrf
         <div class="mb-3">
-            <label for="InputName" class="form-label">Nombre:</label><a style="color:#FF0000";>*</a>
+            <label for="InputName" class="form-label" style="color: #000000;">Nombre:</label><a style="color:#FF0000";>*</a>
             <input type="text" class="form-control" id="InputName" name="nombre" onKeypress="return sololetras(event)" required>
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>

@@ -8,7 +8,7 @@
 <div class="card">
   <div class="card-header">
     <h5 class="card-title">EDITAR CATEGORÍA</h5>
-    <p> <a style="color:#FF0000";>*</a>  Campos obligatorios</p>
+    <p style="color: #000000;"> <a style="color:#FF0000";>*</a>  Campos obligatorios</p>
   </div>
 
   <div class="card-body">
@@ -16,8 +16,8 @@
     @csrf
     @method('PUT')
         <div class="mb-3">
-            <label for="InputName" class="form-label">Nombre:</label><a style="color:#FF0000";>*</a>
-            <input type="text" class="form-control" id="InputName" name="nombre" value="{{$category->nombre}}"  onKeypress="return sololetras(event)" required>
+            <label for="InputName" class="form-label"style="color: #000000;">Nombre:</label><a style="color:#FF0000";>*</a>
+            <input type="text" style="color: #000000;"class="form-control" id="InputName" name="nombre" value="{{$category->nombre}}"  onKeypress="return sololetras(event)" required>
         </div>
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>

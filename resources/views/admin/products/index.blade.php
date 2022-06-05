@@ -9,11 +9,11 @@
 @section('content')
 <div class="card">
   <div class="card-header">
-    <h5 class="card-title">PRODUCTOS</h5>
+    <h5 class="card-title" style="color: #000000;">PRODUCTOS</h5>
   </div>
 
   <div class="col-12">
-    <table class="table">
+    <table class="table"style="color: #000000;">
       <thead>
         <tr>
           <th scope="col">#</th>
