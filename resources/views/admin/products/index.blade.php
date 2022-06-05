@@ -33,7 +33,7 @@
           <td>{{$p->nombre}}</td>
           <td>{{$p->category->nombre}}</td>
           <td>{{$p->cantidad}}</td>
-          <td>{{$p->precio}}</td>
+          <td>${{$p->precio}}</td>
           <td>{{$p->descripcion}}</td>
           <td>
             <a class="btn btn-warning " style="width: 5rem;" href="{{route('admin.products.edit', $p)}}" role="button">Editar</a>
