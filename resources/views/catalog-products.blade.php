@@ -76,8 +76,9 @@
     <main id="main" class="py-5">
         <div class="container">
             <!--MAIN SLIDE-->
-            <div class="wrap-main-slide " style="width: 75rem; height: 20rem;  "> <!--object-fit: cover;-->
-                <!-- JALAR LA IMG DE PRODUCTOS -->
+            <div class="wrap-main-slide " style="width: 75rem; height: 20rem;  ">
+                <!--object-fit: cover;-->
+                <!-- JALAR LA IMG -->
                 <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
                     <div class="item-slide py-5">
                         <img src="assets/images/main-slider-1-1.jpg" alt="" class="img-slide">
@@ -113,50 +114,58 @@
             <!--Product Categories-->
             <div class="wrap-show-advance-info-box style-1">
 
-                <h3 class="title-box" style="background: #36D1C4;">Product Categories</h3>
-                <div class="wrap-top-banner">
-                    <!-- agregar img de alguno producto con la dimension correcta -->
-                    <a href="#" class="link-banner banner-effect-2">
-                        <figure><img src="{{asset('img/pulseras c.jpg')}}" style="width: 75rem; height: 30rem; object-fit: cover; " alt=""></figure>
-                    </a>
-                </div>
-
                 <div class="wrap-products">
                     <div class="wrap-product-tab tab-style-1">
                         <div class="tab-control">
                             @foreach($categories as $c)
-                            <a href="#fashion_1a" class="tab-control-item ">{{$c->nombre}}</a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
+                            @if($c -> id == 1)
+                            <a href="#{{$c->nombre}}" class="tab-control-item active">{{$c->nombre}}</a>
+                            @else
+                            <a href="#{{$c->nombre}}" class="tab-control-item ">{{$c->nombre}}</a>
+                            @endif
 
-                <div class="tab-contents">
-                    <div class="tab-content-item active" id="fashion_1a">
-                        <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                        <figure><img src="{{asset('img/Aretes h.jpg')}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                    </a>
-                                    <div class="group-flash">
-                                        <span class="flash-item new-label">new</span> <!--ETIQUETAS -->
-                                    </div>
-                                    <div class="wrap-btn">
-                                        <a href="#" class="function-link">quick view</a> <!--ETIQUETAS -->
+                            @endforeach
+
+                        </div>
+                        <div class="tab-contents">
+                            @foreach($categories as $c )
+                            @if($c -> id == 1)
+                            <div class="tab-content-item active" id="{{$c->nombre}}">
+                                @else
+                                <div class="tab-content-item " id="{{$c->nombre}}">
+                                    @endif
+                                    <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+                                        @foreach($c-> products as $p)
+                                        <div class="product product-style-2 equal-elem ">
+                                            <div class="product-thumnail">
+                                                <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                                    <figure><img src="{{asset('storage/'.$p->url_img)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+                                                </a>
+                                                <div class="group-flash">
+                                                    <span class="flash-item new-label">new</span>
+                                                    <!--ETIQUETAS -->
+                                                </div>
+                                                <!-- <div class="wrap-btn">
+                                            <a href="#" class="function-link">quick view</a>ETIQUETAS
+                                        </div> -->
+                                            </div>
+                                            <div class="product-info">
+                                                <a href="#" class="product-name"><span>{{$p->nombre}}</span></a>
+                                                <div class="wrap-price"><span class="product-price">${{$p->precio}}</span></div>
+                                            </div>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                                <div class="product-info">
-                                    <a href="#" class="product-name"><span>Lois Caron LCS-4027 Analog Watch - For Men</span></a>
-                                    <div class="wrap-price"><span class="product-price">$250.00</span></div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-        </div>
+
+                </div>
+
+            </div>
 
     </main>
 
@@ -187,6 +196,12 @@
     <script src="{{ asset('js/jquery.countdown.min.js')}}"></script>
     <script src="{{ asset('js/jquery.sticky.js')}}"></script>
     <script src="{{ asset('js/functions.js')}}"></script>
+
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{ asset('js/scripts.js')}}"></script>
 </body>
 
 </html>
