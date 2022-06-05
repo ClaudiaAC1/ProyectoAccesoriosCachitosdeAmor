@@ -12,7 +12,9 @@
 <div class="container-fluid mb-4" style="color:#000000;">
     
         <!--Input de busqueda-->
-<div class="containes-fluid mb-4"style="color:#000000;">
+<div class="containes-fluid mb-4" style="color:#000000;">
+    <form method="GET" action="{{route('admin.reporteVentas.index')}}"  class="row d-flex justify-content-end">
+      
     <div class = "row">
         <div class="col-3">
             <input type="text" style="color: #000000;"class="form-control" placeholder="ID del reporte" name="inputBusqueda" value="">
@@ -44,7 +46,9 @@
                 <label class="input-group-text" for="inputSelectorAnio">Año</label>
                 <select class="form-select" id="inputSelectorAnio" name="inputSelectorAnio" value="">
                     <option value="0" selected>Seleccione un año.</option>
-                    
+                    @foreach($aniodisponible as $anio)
+                    <option value ="{{$anio->anio}}">{{$anio->anio}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -55,6 +59,7 @@
                 Buscar
             </button>
         </div>
+        </form>
         <!--
         <div class="col-3">
             <button type="submit" class="btn btn-light d-flex ps-3 pe-3" name="resumir" id="btn-resumir" data-bs-toggle="modal" data-bs-target="#InformacionResumida">
@@ -77,134 +82,16 @@
                 </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
-            <tr>
-                <th scope="col">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-                <th scope="data">asd</th>
-            </tr>
+            @foreach($listaventas as $li)
+        <tr>
+          <th scope="row">{{$li->usuario}}</th>
+          <td>{{$li->fecha}}</td>
+          <td>{{$li->total}}</td>
+        </tr>
+        @endforeach
             </tbody>
         </table>
+        {{$listaventas->links()}}
     </div>
 </div>
 
