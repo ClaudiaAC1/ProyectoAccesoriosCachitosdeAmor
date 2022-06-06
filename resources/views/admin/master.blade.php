@@ -21,14 +21,15 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
-    <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="https:code.jquery.com/jquery-3.1.0.min.js"></script>
+    {{-- <script src="{{ asset('vendor/jquery/jquery.min.js')}}"></script> --}}
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    {{-- <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script> --}}
 
 
     <script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> --}}
 
 
 </head>
@@ -54,28 +55,37 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt" ></i>
-                    <span ><FONT SIZE=4>Dashboard</FONT></span></a>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>
+                        <FONT SIZE=4>Dashboard</FONT>
+                    </span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider" >
+            <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading" style="color: #FFFFFF;">
-            <FONT SIZE=3>   Módulos</font>
+                <FONT SIZE=3> Módulos</font>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu  VENTAS-->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVentas" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVentas"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-cart-plus"></i>
-                    <span><FONT SIZE=4>Venta</font></span>
+                    <span>
+                        <FONT SIZE=4>Venta</font>
+                    </span>
                 </a>
                 <div id="collapseVentas" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded" >
-                        <h6 class="collapse-header"><FONT SIZE=3>Lista de tareas:</font></h6>
-                        <a class="collapse-item" href="{{route('admin.sales.create')}}"><FONT SIZE=3>Generar</a>
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">
+                            <FONT SIZE=3>Lista de tareas:</font>
+                        </h6>
+                        <a class="collapse-item" href="{{route('admin.sales.create')}}">
+                            <FONT SIZE=3>Generar
+                        </a>
                         <!--ver producto-->
                         <a class="collapse-item" href="#">Corte de caja</a></font>
                         <!--agregar producto-->
@@ -91,12 +101,16 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategory"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-box-archive"></i>
-                    <span><FONT SIZE=4>Categorias</font></span>
+                    <span>
+                        <FONT SIZE=4>Categorias</font>
+                    </span>
                 </a>
                 <div id="collapseCategory" class="collapse" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"style="color: #000000;" ><FONT SIZE=2>Lista de tareas </h6>
+                        <h6 class="collapse-header" style="color: #000000;">
+                            <FONT SIZE=2>Lista de tareas
+                        </h6>
                         <a class="collapse-item" href="{{route('admin.categories.index')}}">Ver</a>
                         <!--ver categoria-->
                         <a class="collapse-item" href="{{route('admin.categories.create')}}">Agregar</a></FONT>
@@ -110,11 +124,15 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProduct"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-list-check"></i>
-                    <span><FONT SIZE=4>Productos</FONT></span>
+                    <span>
+                        <FONT SIZE=4>Productos</FONT>
+                    </span>
                 </a>
                 <div id="collapseProduct" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header" style="color: #000000;" ><FONT SIZE=2>Lista de tareas</h6>
+                        <h6 class="collapse-header" style="color: #000000;">
+                            <FONT SIZE=2>Lista de tareas
+                        </h6>
                         <a class="collapse-item" href="{{route('admin.products.index')}}">Ver</a>
                         <!--ver producto-->
                         <a class="collapse-item" href="{{route('admin.products.create')}}">Agregar</a></font>
@@ -128,12 +146,15 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReportes"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span><FONT SIZE=4>Reportes</FONT></span>
+                    <span>
+                        <FONT SIZE=4>Reportes</FONT>
+                    </span>
                 </a>
                 <div id="collapseReportes" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('admin.reporteVentas.index')}}"> Generar Reporte</a></FONT>
+                        <a class="collapse-item" href="{{route('admin.reporteVentas.index')}}"> Generar Reporte</a>
+                        </FONT>
                         <!-- Revisar -->
                     </div>
                 </div>
@@ -144,7 +165,7 @@
 
             @if(auth()->user()->rol == 'Administrador')
             <div class="sidebar-heading" style="color: #FFFFFF;">
-            <FONT SIZE=3> Administrador</FONT>
+                <FONT SIZE=3> Administrador</FONT>
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -152,11 +173,15 @@
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
                     aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span><FONT SIZE=2.9>Acciones privilegiadas</FONT></span>
+                    <span>
+                        <FONT SIZE=2.9>Acciones privilegiadas</FONT>
+                    </span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('admin.users.create')}}"><FONT SIZE=3>Crear usuario</a>
+                        <a class="collapse-item" href="{{route('admin.users.create')}}">
+                            <FONT SIZE=3>Crear usuario
+                        </a>
                         <a class="collapse-item" href="{{route('admin.users.index')}}">Ver usuarios</a></FONT>
 
                     </div>
@@ -185,7 +210,7 @@
                     </button>
 
 
-                    <div class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100"  style="color: #000000;">
+                    <div class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100" style="color: #000000;">
                         @yield('module')
                         <!-- TITULO DE CABECERA PARA EL MODULO -->
                     </div>
@@ -228,9 +253,10 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle"  href="#" id="userDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline  small"  style="color: #000000;">{{ auth()->user()->nombre
+                                <span class="mr-2 d-none d-lg-inline  small" style="color: #000000;">{{
+                                    auth()->user()->nombre
                                     }}</span>
                                 <img class="img-profile rounded-circle" src="{{asset('img/perfil.jpeg')}}">
                             </a>
@@ -238,8 +264,8 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" ></i>
-                                           Cerrar sesión
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar sesión
                                 </a>
                             </div>
                         </li>
@@ -321,9 +347,9 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                    <span  style="color: #000000;">Copyright &copy; Accesorios Cachitos de Amor 2022<br>
-                        Derechos reservados DESARROLLADORES DE SOFTWARE ARCIE, S.A. &copy;
-                       </span>
+                        <span style="color: #000000;">Copyright &copy; Accesorios Cachitos de Amor 2022<br>
+                            Derechos reservados DESARROLLADORES DE SOFTWARE ARCIE, S.A. &copy;
+                        </span>
                     </div>
                 </div>
             </footer>
@@ -346,7 +372,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"  style="color: #000000;">¿Estás seguro?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: #000000;">¿Estás seguro?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>

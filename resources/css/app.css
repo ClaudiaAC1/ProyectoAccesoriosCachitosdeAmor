@@ -1,0 +1,9 @@
+.img-center{
+    display:block;
+    margin:auto;
+    border: 0mm;
+}
+.img-size{
+  max-width: 20%;
+  max-height: 20%;
+}

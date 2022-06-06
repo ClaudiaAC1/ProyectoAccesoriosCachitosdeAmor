@@ -7,25 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Sale;
 use Carbon\Carbon;
-
+use Mockery\Undefined;
 
 class SaleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $products = Product::orderBy('id', 'Desc')->get();
@@ -40,6 +32,7 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
+        // if ($request->get('bandera') != 'enviado') {
 
         $id_user = auth()->user()->id;
         $fecha = Carbon::now()->toDateString();
@@ -51,25 +44,25 @@ class SaleController extends Controller
                 'total' => $request->get("total"),
             ]
         );
+
         $sale->saveOrFail();
-
-
         $ids = $request->get("productos");
         $cantidades = $request->get("cantidades");
 
         $length = count($ids);
         for ($i = 0; $i < $length; ++$i) {
-
             for ($j = 0; $j < (int)$cantidades[$i]; ++$j) {
                 $sale->products()->attach($ids[$i]);
             }
         }
+        // }
 
-        return redirect()->route('admin.sales.create')->with('message', '¡¡Venta exitosa!!');
     }
 
     public function agregarProductos()
     {
+        redirect()->route('admin.sales.create')->with('message', '¡Se ha  registrado la venta con exito!')
+            ->with('typealert', 'success');
     }
 
 
