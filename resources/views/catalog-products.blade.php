@@ -86,8 +86,9 @@
 
                     @foreach ($productos as $p)
 
-                    <div class="carousel-item @if($p->id == 1 ) active @endif" data-bs-interval="5000">
-                        <img src="{{asset('storage/'.$p->url_img)}}" class=" w-100  col-auto" alt="..." style="background-size: cover; height:30rem;   ">
+                    <div class="carousel-item @if($p->id == 1 ) active @endif" data-bs-interval="5000" >
+                        <img src="{{asset('storage/'.$p->url_img)}}" class=" w-100  col-auto" alt="..." style="background-size: cover;
+                                     height:30rem; ">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>.... </h5>
                             <p>.....</p>
