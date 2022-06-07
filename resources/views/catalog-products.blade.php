@@ -73,44 +73,38 @@
 
     </header>
 
-    <main id="main" class="py-5">
+    <main id="main" class="py-3">
         <div class="container">
             <!--MAIN SLIDE-->
-            <div class="wrap-main-slide " style="width: 75rem; height: 20rem;  ">
-                <!--object-fit: cover;-->
-                <!-- JALAR LA IMG -->
-                <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
-                    <div class="item-slide py-5">
-                        <img src="assets/images/main-slider-1-1.jpg" alt="" class="img-slide">
-                        <div class="slide-info slide-1">
-                            <h2 class="f-title">Kid Smart <b>Watches</b></h2>
-                            <span class="subtitle">Compra todos tus productos Smart por internet.</span>
-                            <p class="sale-info">Only price: <span class="price">$59.99</span></p>
-                            <!-- <a href="#" class="btn-link">Shop Now</a> -->
-                        </div>
-                    </div>
-                    <div class="item-slide py-5">
-                        <img src="assets/images/main-slider-1-2.jpg" alt="" class="img-slide">
-                        <div class="slide-info slide-2">
-                            <h2 class="f-title">Extra 25% Off</h2>
-                            <span class="f-subtitle">On online payments</span>
-                            <p class="discount-code">Use Code: #FA6868</p>
-                            <h4 class="s-title">Get Free</h4>
-                            <p class="s-subtitle">TRansparent Bra Straps</p>
-                        </div>
-                    </div>
-                    <div class="item-slide py-5">
-                        <img src="assets/images/main-slider-1-3.jpg" alt="" class="img-slide">
-                        <div class="slide-info slide-3">
-                            <h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
-                            <span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
-                            <p class="sale-info">Stating at: <b class="price">$225.00</b></p>
-                            <!-- <a href="#" class="btn-link">Shop Now</a> -->
-                        </div>
-                    </div>
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-            </div>
+                <div class="carousel-inner" style="text-align: center;">
 
+                    @foreach ($productos as $p)
+
+                    <div class="carousel-item @if($p->id == 1 ) active @endif" data-bs-interval="5000">
+                        <img src="{{asset('storage/'.$p->url_img)}}" class=" w-100  col-auto" alt="..." style="background-size: cover; height:30rem;   ">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>.... </h5>
+                            <p>.....</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
             <!--Product Categories-->
             <div class="wrap-show-advance-info-box style-1">
 
@@ -118,54 +112,45 @@
                     <div class="wrap-product-tab tab-style-1">
                         <div class="tab-control">
                             @foreach($categories as $c)
-                            @if($c -> id == 1)
-                            <a href="#{{$c->nombre}}" class="tab-control-item active">{{$c->nombre}}</a>
-                            @else
-                            <a href="#{{$c->nombre}}" class="tab-control-item ">{{$c->nombre}}</a>
-                            @endif
-
+                            <a href="#{{$c->id}}" class="tab-control-item @if($c -> id == 1) active @endif">{{$c->nombre}}</a>
                             @endforeach
 
                         </div>
                         <div class="tab-contents">
                             @foreach($categories as $c )
-                            @if($c -> id == 1)
-                            <div class="tab-content-item active" id="{{$c->nombre}}">
-                                @else
-                                <div class="tab-content-item " id="{{$c->nombre}}">
-                                    @endif
-                                    <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-                                        @foreach($c-> products as $p)
-                                        <div class="product product-style-2 equal-elem ">
-                                            <div class="product-thumnail">
-                                                <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                                                    <figure><img src="{{asset('storage/'.$p->url_img)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
-                                                </a>
-                                                <div class="group-flash">
-                                                    <span class="flash-item new-label">new</span>
-                                                    <!--ETIQUETAS -->
-                                                </div>
-                                                <!-- <div class="wrap-btn">
+                            <div class="tab-content-item @if($c -> id == 1) active @endif" id="{{$c->id}}">
+                                <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+                                    @foreach($c->products as $p)
+                                    <div class="product product-style-2 equal-elem ">
+                                        <div class="product-thumnail">
+                                            <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                                <figure><img src="{{asset('storage/'.$p->url_img)}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+                                            </a>
+                                            <div class="group-flash">
+                                                <span class="flash-item new-label">new</span>
+                                                <!--ETIQUETAS -->
+                                            </div>
+                                            <!-- <div class="wrap-btn">
                                             <a href="#" class="function-link">quick view</a>ETIQUETAS
                                         </div> -->
-                                            </div>
-                                            <div class="product-info">
-                                                <a href="#" class="product-name"><span>{{$p->nombre}}</span></a>
-                                                <div class="wrap-price"><span class="product-price">${{$p->precio}}</span></div>
-                                            </div>
                                         </div>
-                                        @endforeach
+                                        <div class="product-info">
+                                            <a href="#" class="product-name"><span>{{$p->nombre}}</span></a>
+                                            <div class="wrap-price"><span class="product-price">${{$p->precio}}</span></div>
+                                        </div>
                                     </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
                             </div>
+                            @endforeach
                         </div>
                     </div>
-
-
                 </div>
 
+
             </div>
+
+        </div>
 
     </main>
 

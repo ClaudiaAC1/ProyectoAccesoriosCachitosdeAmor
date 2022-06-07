@@ -59,7 +59,7 @@ class CategoryController extends Controller
         }
 
         $category = new Category();
-        $category->id = date('H').date('i');
+        // $category->id = date('H').date('i');
         $category->nombre = $request->input('nombre');
         $category->slug = Str::slug($request->input('nombre'));
 
