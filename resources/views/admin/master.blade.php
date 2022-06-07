@@ -86,9 +86,7 @@
                         <a class="collapse-item" href="{{route('admin.sales.create')}}">
                             <FONT SIZE=3>Generar
                         </a>
-                        <!--ver producto-->
-                        <a class="collapse-item" href="#">Corte de caja</a></font>
-                        <!--agregar producto-->
+                        
                     </div>
                 </div>
             </li>

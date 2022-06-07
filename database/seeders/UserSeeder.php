@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
             'slug' => 'empleado-1',
             'email' => 'empleado1@gmail.com',
             'telefono' =>'1111122222',
-            'password'=> encrypt('123456789'),
+            'password'=> Hash::make('12345678'),
             'rol' => 'Empleado',
         ]);
 
@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
             'slug' => 'empleado-2',
             'email' => 'empleado2@gmail.com',
             'telefono' =>'1111122222',
-            'password'=> encrypt('123456789'),
+            'password'=> Hash::make('12345678'),
             'rol' => 'Empleado',
         ]);
     }
