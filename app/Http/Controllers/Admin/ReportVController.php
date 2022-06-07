@@ -61,9 +61,9 @@ class ReportVController extends Controller
         }
 
         if ($rows == null) {
-            $rows = Sale::paginate(5);
+            $rows = Sale::paginate(10);
         } else {
-            $rows = $rows->paginate(5);
+            $rows = $rows->paginate(10);
         }
         return $rows;
     }

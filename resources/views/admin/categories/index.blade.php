@@ -6,28 +6,9 @@
 
 @section('content')
 <div class="card">
-
-<div class=col-12>
-        <h5 class="card-title" style="color: #000000;">Categorías</h5>
-</div>
-<div class="containes-fluid mb-4" style="color:#000000;">
-    <form method="GET" action="{{route('admin.categories.index')}}"  class="row d-flex justify-content-end">
-    <div class = "row">
-        <div class="col-2">
-            <label for="numeropaginado" class="form-label"style="color: #000000;">Número de paginado</label>
-        </div>
-        <div class="col-2">
-            <input type="text" style="color: #000000;"class="form-control" placeholder="Número de paginado" name="numeropaginado" value="6">
-        </div>
-        <div class="col-3">
-            <button style="color: #000000;" type="submit" class="btn btn-light d-flex ps-3 pe-3">
-                <span class="me-3">&#xF479</span>
-                Paginar
-            </button>
-        </div>
-</div>
-</form>
-</div>
+  <div class="card-header">
+    <h5 style="color: #000000;" class="card-title">CATEGORÍAS</h5>
+  </div>
 
   <div class="col-12">
     <table class="table" style="color: #000000;">
