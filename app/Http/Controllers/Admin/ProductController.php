@@ -48,7 +48,7 @@ class ProductController extends Controller
             [
                 'nombre' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
                 'cantidad' => 'required|regex:/^\d+$/',
-                'precio' => 'required|regex:/^[0-9]{2}+\.[0-9]{2}+$/',
+                'precio' => 'required|regex:/^[0-9]{1,4}+\.[0-9]{2}+$/',
                 'categoria' => 'required',
                 'descripcion' => 'required|regex:/^[A-Z][a-zÀ-ÿ\s]/',
                 'url_img' => 'required|image',
