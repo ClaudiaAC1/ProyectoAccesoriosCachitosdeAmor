@@ -312,7 +312,7 @@
                             <tr>
                                 <th>Código</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Stock</th>
                                 <th>Precio</th>
                                 <th>Agregar al carrito</th>
@@ -326,7 +326,7 @@
                                 <td>{{$p->nombre}}</td>
                                 <td>{{$p->descripcion}}</td>
                                 <td>{{$p->cantidad}}</td>
-                                <td>{{$p->precio}}</td>
+                                <td>${{$p->precio}}</td>
                                 <td align="center">
 
                                     <button class="btn btn-lg" type="submit" onclick="agregarCart({{ $p }} )"><i

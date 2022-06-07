@@ -27,7 +27,7 @@
           <th scope="row">{{$c->id}}</th>
           <td>{{$c->nombre}}</td>
           <td colspan="2" class="row">
-            <a class="btn btn-warning col-5" href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>       
+            <a class="btn btn-warning col-3"  href="{{route('admin.categories.edit', $c)}}" role="button">Editar</a>       
 </td>
 
 <td>
