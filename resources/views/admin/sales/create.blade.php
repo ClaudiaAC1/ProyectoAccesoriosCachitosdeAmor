@@ -101,7 +101,7 @@
         $('.toast').toast({
         delay:2500,
         position : 'bottom-right',
-        bgColor : 'primary',
+        bgColor : 'success',
         // Other options
         });
 
@@ -195,7 +195,7 @@
                     .then( response => {
                     $.get('{{route('admin.sales.saleproduct')}}', function (status) {   
                         
-                        window.location.href = "{{ route('admin.sales.create')}}";
+                        
                         
                     });
                     
@@ -262,6 +262,14 @@
     
     
     }
+    
+    function finalComprar(){
+        comprar();
+        ticket();
+    }
+    function cerrarTicket(){
+        window.location.href = "{{ route('admin.sales.create')}}";
+    }
    
         
     
@@ -289,9 +297,9 @@
                         class="d-flex justify-content-center align-items-center w-100">
 
                         <!-- Then put toasts within -->
-                        <div class="toast bg-info" role="alert" id="toastAgregado" name="toastAgregado"
+                        <div class="toast bg-toast" role="alert" id="toastAgregado" name="toastAgregado"
                             aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
+                            <div class="toast-header" style="background-color:#F6318C; color: #FFF">
                                 <img src="..." class="rounded me-2" alt="...">
                                 <strong class="me-auto">Cachitos de amor..</strong>
                                 <small></small>
@@ -412,7 +420,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" id="modal-btn-no">No</button>
-                    <button type="button" onclick="ticket()" class="btn btn-success" id="modal-btn-si">Si</button>
+                    <button type="button" onclick="finalComprar()" class="btn btn-success" id="modal-btn-si">Si</button>
                 </div>
             </div>
         </div>
@@ -432,13 +440,17 @@
                 </div>
                 <div class="modal-body">
 
-                    {{-- <img class="img-center img-size" mat-card-lg-image src="{{ asset('img/logo.jpg') }}"> --}}
-                    <div class="text-center">
 
-                        <h6 class="text-center"> Accesorios Cachitos de amor</h6>
+                    <div class="text-center border">
 
-                        <p> Comprobante de compra</p>
-                        <p>****************************************************************** </p>
+                        <h6 class="text-center"> <b>❤️ACCESORIOS CACHITOS DE AMOR </b></h6>
+                        <p> <b>¡Muchas gracias por tu compra!, te esperamos pronto.</b></p>
+                        <img src="{{ asset('img/logo.jpg')}}" alt=""
+                            style="border-radius:150px; width:200px; height:200px; border-color:#000; border-width:3px;">
+                        <p> <b> Comprobante de compra</b></p>
+                        <p> <b> Venta realizada por: {{ $name_user}}</b></p>
+                        <p> <b> Fecha de la venta: {{$fecha}}</b></p>
+                        {{-- <p>****************************************************************** </p> --}}
                     </div>
                     <table class="table table-borderless" id='ticket_tabla' name="ticket_tabla">
                         <thead>
@@ -462,7 +474,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="comprar()"
+                    <button type="button" class="btn btn-secondary" onclick="cerrarTicket()"
                         data-dismiss="modal">Cerrar</button>
 
                 </div>

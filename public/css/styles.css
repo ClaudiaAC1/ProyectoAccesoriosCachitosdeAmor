@@ -11390,3 +11390,14 @@ header.masthead .bg-circle-4 {
   width: 5%;
   height: 5%;
 }
+
+
+.bg-toast{
+  background-color: #13653f !important;
+}
+.border {
+    border-radius: 5px;
+    /* border-top-right-radius: 10px; */
+    border-color: #000;
+    border-width: 3px;
+}

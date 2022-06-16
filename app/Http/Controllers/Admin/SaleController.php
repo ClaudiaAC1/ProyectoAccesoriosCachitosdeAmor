@@ -20,8 +20,11 @@ class SaleController extends Controller
 
     public function create()
     {
+        $name_user = auth()->user()->name;
+        $fecha = Carbon::now()->toDateString();
+
         $products = Product::orderBy('id', 'Desc')->get();
-        return view('admin.sales.create', compact('products'));
+        return view('admin.sales.create', compact('products', 'name_user', 'fecha'));
     }
 
     /**
@@ -53,6 +56,7 @@ class SaleController extends Controller
         for ($i = 0; $i < $length; ++$i) {
             for ($j = 0; $j < (int)$cantidades[$i]; ++$j) {
                 $sale->products()->attach($ids[$i]);
+                Product::find($ids[$i])->decrement('cantidad');
             }
         }
         // }
