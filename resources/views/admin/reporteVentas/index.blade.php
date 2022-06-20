@@ -94,24 +94,4 @@
         {{$listaventas->links()}}
     </div>
 </div>
-
-
-
-<!-- este pedo ya no, lo traeré del controller con un for  XD
-<div class="card-body">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Categoria</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Descripcion</th>
-          <th scope="col">Opciones</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-    </table>
-</div>-->
 @endsection
