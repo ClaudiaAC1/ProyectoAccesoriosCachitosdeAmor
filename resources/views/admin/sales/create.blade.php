@@ -64,10 +64,21 @@
     
    
     function agregarCart(producto){
+         $('.toast').toast({
+        delay:2500,
+        position : 'bottom-right',
+        bgColor : 'success',
+        // Other options
+        });
+
+        
+        let index = idsCarrito.indexOf(producto["id"]);
+
+       
+
         $(".tablerow").detach();
         
 
-        let index = idsCarrito.indexOf(producto["id"]);
 
         if(index < 0 ){
            
@@ -76,11 +87,17 @@
             idsCarrito.push(producto["id"]);
             cantidadesc.push(1);
             preciosc.push(producto.precio);
+            $('#toastAgregado').toast('show');
             
         }else{
-            cantidadesc[index] = cantidadesc[index] + 1;
-            preciosc[index] = preciosc[index] * cantidadesc[index];
-            
+            if(producto["cantidad"]- cantidadesc[index] >= 1){
+                cantidadesc[index] = cantidadesc[index] + 1;
+                preciosc[index] = producto["precio"] * cantidadesc[index];
+                $('#toastAgregado').toast('show');
+
+            }else{
+                $('#toastNoAgregado').toast('show');
+            }
         }
        
         carrito.forEach(function(producto, indice, array) {
@@ -98,19 +115,22 @@
         getTotal()
         document.getElementById("total").value = total;
 
-        $('.toast').toast({
-        delay:2500,
-        position : 'bottom-right',
-        bgColor : 'success',
-        // Other options
-        });
+       
 
-        $('#toastAgregado').toast('show');
+        
     
     
     }
+    function cancelarEscritura(){
+        return false;
+    }
 
     function inputChange(id) {
+        let index = idsCarrito.indexOf(id);
+        let producto = carrito[index];
+
+        
+
         console.log('identrada',id)
         let cantidad= 0;
         $('#checkOut tbody tr').each(function () {
@@ -119,38 +139,44 @@
         console.log(idc)
         
         if(idc == id){
+
+        
             
           cantidad = $(this).children(".inp").find("input").val();
           console.log(cantidad)
+
         }
         
         })
-      
-        console.log("cantidad:",cantidad);
-        let index = idsCarrito.indexOf(id);
-        let producto = carrito[index];
-        cantidadesc[index] = cantidad;
-        preciosc[index] = producto.precio * cantidad;
-        console.log('cantidadefin',cantidadesc[index])
         
-        let cantidadc = document.getElementById('cinput').value;
 
-        $(".tablerow").detach();
-
-        carrito.forEach(function(producto, indice, array) {
-        var valores = "<tr class='tablerow'>"+
-            "<td class='iden'>"+ producto["id"]+"</td>"+
-            "<td>"+ producto["nombre"]+" </td>"+
-            "<td>"+producto.precio+"</td>"+
-            "<td class='inp'> <input id ='cinput' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
-            "<td class='total'>"+preciosc[indice]+"</td>"+
-            "<td><button class='btn btn-lg' onclick='eliminarProducto("+producto["id"]+")'> <i class='fa-solid fa-minus-circle'></i> </button></td>"+
-            "</tr>";
-        $('#checkOut').find('tbody').append(valores);
-        })
-
-        getTotal()
-        document.getElementById("total").value = total;
+            console.log("cantidad:",cantidad);
+            // let index = idsCarrito.indexOf(id);
+            // let producto = carrito[index];
+            cantidadesc[index] = cantidad;
+            preciosc[index] = producto.precio * cantidad;
+            console.log('cantidadefin',cantidadesc[index])
+            
+            let cantidadc = document.getElementById('cinput').value;
+    
+            $(".tablerow").detach();
+    
+            carrito.forEach(function(producto, indice, array) {
+            var valores = "<tr class='tablerow'>"+
+                "<td class='iden'>"+ producto["id"]+"</td>"+
+                "<td>"+ producto["nombre"]+" </td>"+
+                "<td>"+producto.precio+"</td>"+
+                "<td class='inp'> <input id='cinput' min='1' max='"+producto["cantidad"]+"' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
+                "<td class='total'>"+preciosc[indice]+"</td>"+
+                "<td><button class='btn btn-lg' onclick='eliminarProducto("+producto["id"]+")'> <i class='fa-solid fa-minus-circle'></i> </button></td>"+
+                "</tr>";
+            $('#checkOut').find('tbody').append(valores);
+            })
+    
+            getTotal()
+            document.getElementById("total").value = total;
+        
+      
     }
 
     function getTotal(){
@@ -249,7 +275,7 @@
         "<td class='iden'>"+ producto["id"]+"</td>"+
         "<td>"+ producto["nombre"]+" </td>"+
         "<td>"+producto.precio+"</td>"+
-        "<td class='inp'> <input id='cinput' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
+        "<td class='inp'> <input min='1' max='"+producto["cantidad"]+"' id='cinput' class='inpcan' onchange='inputChange("+producto["id"]+")' type='number' value='"+cantidadesc[indice]+"'></input></td>"+
         "<td class='total'>"+preciosc[indice]+"</td>"+
         "<td><button class='btn btn-lg' onclick='eliminarProducto("+producto["id"]+")'> <i class='fa-solid fa-minus-circle'></i> </button></td>"+
         "</tr>";
@@ -270,6 +296,7 @@
     function cerrarTicket(){
         window.location.href = "{{ route('admin.sales.create')}}";
     }
+    
    
         
     
@@ -310,6 +337,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div aria-live="polite" aria-atomic="true"
+                        class="d-flex justify-content-center align-items-center w-100">
+
+                        <!-- Then put toasts within -->
+                        <div class="toast bg-toast" role="alert" id="toastNoAgregado" name="toastNoAgregado"
+                            aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header" style="background-color:#F6318C; color: #FFF">
+                                <img src="..." class="rounded me-2" alt="...">
+                                <strong class="me-auto">Cachitos de amor..</strong>
+                                <small></small>
+                            </div>
+                            <div class="toast-body">
+                                Producto sin stock.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container" style="width: 75">
@@ -329,21 +374,24 @@
                         </thead>
                         <tbody>
                             @foreach($products as $p)
+                            @if ($p->cantidad>0)
+
                             <tr>
                                 <td>{{$p->id}}</td>
                                 <td>{{$p->nombre}}</td>
                                 <td>{{$p->descripcion}}</td>
-                                <td>{{$p->cantidad}}</td>
+                                <td class='stock'>{{$p->cantidad}}</td>
                                 <td>${{$p->precio}}</td>
                                 <td align="center">
 
-                                    <button class="btn btn-lg" type="submit" onclick="agregarCart({{ $p }} )"><i
+                                    <button class="btn btn-lg" type="submit" onclick="agregarCart({{$p}})"><i
                                             class="fa-solid fa-cart-plus"></i>
                                     </button>
 
 
                                 </td>
                             </tr>
+                            @endif
                             @endforeach
 
                         </tbody>

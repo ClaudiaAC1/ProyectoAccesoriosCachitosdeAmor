@@ -80,13 +80,13 @@
                 </a>
                 <div id="collapseVentas" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">
-                            <FONT SIZE=3>Lista de tareas:</font>
+                        <h6 class="collapse-header" style="color: #000000;">
+                            <FONT SIZE=2>Lista de tareas:</font>
                         </h6>
                         <a class="collapse-item" href="{{route('admin.sales.create')}}">
                             <FONT SIZE=3>Generar
                         </a>
-                        
+
                     </div>
                 </div>
             </li>
