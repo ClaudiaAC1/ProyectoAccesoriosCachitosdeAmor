@@ -21,7 +21,7 @@ class SaleController extends Controller
     public function create()
     {
         $name_user = auth()->user()->name;
-        $fecha = Carbon::now()->toDateString();
+        $fecha = Carbon::now()->toDateTimeString();
 
         $products = Product::orderBy('id', 'Desc')->get();
         return view('admin.sales.create', compact('products', 'name_user', 'fecha'));
@@ -38,7 +38,7 @@ class SaleController extends Controller
         // if ($request->get('bandera') != 'enviado') {
 
         $id_user = auth()->user()->id;
-        $fecha = Carbon::now()->toDateString();
+        $fecha = Carbon::now()->toDateTimeString();
 
         $sale = new Sale(
             [
